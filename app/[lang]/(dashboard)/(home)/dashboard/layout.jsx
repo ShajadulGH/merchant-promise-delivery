@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Ecommerce",
+  title: "Dashboard",
 };
 
 const Layout = ({ children }) => {

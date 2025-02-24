@@ -1,7 +1,6 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 import AdvancedTable from "./data-table/advanced";
 
 const Settings = () => {
@@ -25,8 +24,8 @@ const Settings = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-14 gap-6 mt-6 mb-6">
-      <div className="col-span-12 lg:col-span-8">
+    <div className="grid grid-cols-12  gap-6 mt-6 mb-6">
+      <div className="col-span-12 lg:col-span-12">
         <Tabs defaultValue="all" className="p-0 px-1">
           <TabsList className="bg-card  flex-1 overflow-x-auto md:overflow-hidden  w-full px-5 pt-6 pb-2.5 h-fit border-b border-default-200  rounded-none justify-start gap-12 rounded-t-md mb-6">
             {tabs.map((tab, index) => (
@@ -45,13 +44,13 @@ const Settings = () => {
             <AdvancedTable />
           </TabsContent>
           <TabsContent value="active" className="mt-0">
-            <AdvancedTable />
+            {/* <AdvancedTable /> */}
           </TabsContent>
           <TabsContent value="delivered" className="mt-0">
-            <AdvancedTable />
+            {/* <AdvancedTable /> */}
           </TabsContent>
           <TabsContent value="returned" className="mt-0">
-            <AdvancedTable />
+            {/* <AdvancedTable /> */}
           </TabsContent>
         </Tabs>
       </div>

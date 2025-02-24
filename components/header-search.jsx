@@ -67,7 +67,7 @@ const HeaderSearch = ({ open, setOpen }) => {
                 </CommandItem>
                 <CommandItem className="aria-selected:bg-transparent p-0 mb-2.5">
                   <Link
-                    href="/dashboard"
+                    href="/invoice-list"
                     className="flex gap-1 items-center px-2 text-default-500 hover:text-primary "
                   >
                     <Icon icon="heroicons:shopping-bag" />
@@ -76,7 +76,7 @@ const HeaderSearch = ({ open, setOpen }) => {
                 </CommandItem>
                 <CommandItem className="aria-selected:bg-transparent p-0 mb-2.5">
                   <Link
-                    href="/dashboard"
+                    href="/store"
                     className="flex gap-1 items-center px-2 text-default-500 hover:text-primary "
                   >
                     <Icon icon="heroicons:shopping-bag" />

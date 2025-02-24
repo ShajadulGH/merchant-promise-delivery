@@ -13,6 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 const LogInForm = () => {
   // const [isPending, startTransition] = React.useTransition();
   const [passwordType, setPasswordType] = React.useState("password");
@@ -33,13 +34,13 @@ const LogInForm = () => {
   return (
     <div className="w-full py-10">
       <Link href="/dashboard" className="inline-block">
-        <SiteLogo className="h-10 w-10 2xl:w-14 2xl:h-14 text-primary" />
+        <Image src="/Asset 1RP Logo.png" width="150" height="150" />
       </Link>
       <div className="2xl:mt-8 mt-6 2xl:text-3xl text-2xl font-bold text-default-900">
-        Hey, Hello 👋
+        Welcome, Merchant!
       </div>
       <div className="2xl:text-lg text-base text-default-600 2xl:mt-2 leading-6">
-        Enter the information you entered while registering.
+        Sign in to have a reliable and fast product delivery
       </div>
       <form onSubmit={formSubmitHandler} className="mt-5 2xl:mt-7">
         <div>

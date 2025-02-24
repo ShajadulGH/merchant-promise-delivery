@@ -58,7 +58,7 @@ export const menusConfig = {
     {
       title: "invoice",
       icon: Messages,
-      href: "/chat",
+      href: "/invoice-list",
     },
     {
       title: "store",
@@ -111,7 +111,7 @@ export const menusConfig = {
           {
             title: "invoice",
             icon: Messages,
-            href: "/something!",
+            href: "/invoice-list",
           },
           {
             title: "store",
@@ -139,7 +139,7 @@ export const menusConfig = {
       {
         title: "invoice",
         icon: Messages,
-        href: "/something!",
+        href: "/invoice-list",
       },
       {
         title: "store",
