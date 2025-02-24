@@ -23,11 +23,11 @@ const InvoicePreview = () => {
   const columns = [
     {
       id: 1,
-      label: "DESCRIPTION",
+      label: "Description",
     },
     {
       id: 2,
-      label: "QUANTITY",
+      label: "Quantity",
     },
     {
       id: 3,
@@ -37,37 +37,38 @@ const InvoicePreview = () => {
       id: 4,
       label: "Total",
     },
+
     {
       id: 5,
-      label: "DESCRIPTION",
+      label: "All Total",
     },
     {
       id: 6,
-      label: "QUANTITY",
+      label: "All Total",
     },
     {
       id: 7,
-      label: "Rate",
+      label: "All Total",
     },
     {
       id: 8,
-      label: "Total",
+      label: "All Total",
     },
     {
       id: 9,
-      label: "DESCRIPTION",
+      label: "All Total",
     },
     {
       id: 10,
-      label: "QUANTITY",
+      label: "All Total",
     },
     {
       id: 11,
-      label: "Rate",
+      label: "All Total",
     },
     {
       id: 12,
-      label: "Total",
+      label: "All Total",
     },
   ];
   const data = [
@@ -77,6 +78,14 @@ const InvoicePreview = () => {
       quantity: "3",
       rate: "421",
       amount: "1663.00",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
     },
     {
       id: 2,
@@ -84,6 +93,14 @@ const InvoicePreview = () => {
       quantity: "1",
       rate: "696",
       amount: "696.00",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
+      allTotal: "40000",
     },
   ];
   return (
@@ -180,6 +197,30 @@ const InvoicePreview = () => {
                         </TableCell>
                         <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
                           ${item.amount}
+                        </TableCell>
+                        <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
+                          ${item.allTotal}
+                        </TableCell>
+                        <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
+                          ${item.allTotal}
+                        </TableCell>
+                        <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
+                          ${item.allTotal}
+                        </TableCell>
+                        <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
+                          ${item.allTotal}
+                        </TableCell>
+                        <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
+                          ${item.allTotal}
+                        </TableCell>
+                        <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
+                          ${item.allTotal}
+                        </TableCell>
+                        <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
+                          ${item.allTotal}
+                        </TableCell>
+                        <TableCell className="ltr:text-right rtl:text-left text-sm font-medium text-default-600">
+                          ${item.allTotal}
                         </TableCell>
                       </TableRow>
                     ))}

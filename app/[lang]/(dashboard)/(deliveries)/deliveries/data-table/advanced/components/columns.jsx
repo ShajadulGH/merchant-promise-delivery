@@ -7,7 +7,6 @@ import { labels, priorities, statuses } from "../data/data";
 import { DataTableColumnHeader } from "./data-table-column-header";
 import { DataTableRowActions } from "./data-table-row-actions";
 
-
 export const columns = [
   {
     id: "select",
@@ -89,9 +88,11 @@ export const columns = [
   },
   {
     accessorKey: "priority",
+
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Priority" />
     ),
+
     cell: ({ row }) => {
       const priority = priorities.find(
         (priority) => priority.value === row.getValue("priority")
@@ -111,7 +112,8 @@ export const columns = [
               (priority.label === "High" && "destructive") ||
               (priority.label === "Medium" && "info") ||
               (priority.label === "Low" && "warning")
-            }>
+            }
+          >
             {priority.label}
           </Badge>
         </div>

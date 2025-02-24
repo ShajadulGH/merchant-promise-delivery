@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import background from "@/public/login-page-image1.jpg";
+import background from "@/public/loginImage.jpg";
 import LogInForm from "@/components/auth/login-form";
 
 const LoginPage = () => {

@@ -94,7 +94,11 @@ const MobileSidebar = ({ collapsed, className }) => {
                 {/* single menu  */}
 
                 {!item.child && !item.isHeader && (
-                  <SingleMenuItem item={item} collapsed={collapsed} />
+                  <SingleMenuItem
+                    item={item}
+                    collapsed={collapsed}
+                    setMobileMenu={setMobileMenu}
+                  />
                 )}
 
                 {/* menu label */}
@@ -111,6 +115,7 @@ const MobileSidebar = ({ collapsed, className }) => {
                       index={i}
                       activeSubmenu={activeSubmenu}
                       collapsed={collapsed}
+                      setMobileMenu={setMobileMenu}
                     />
 
                     {!collapsed && (

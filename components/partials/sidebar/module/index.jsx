@@ -156,7 +156,13 @@ const ModuleSidebar = ({ trans }) => {
         >
           <div className=" pt-4 ">
             <Link href="/dashboard">
-              <SiteLogo className=" mx-auto text-primary h-8 w-8" />
+              {/* <SiteLogo className=" mx-auto text-primary h-8 w-8" /> */}
+              <Image
+                src="/fav-promise.svg"
+                width="30"
+                height="30"
+                className="mx-auto text-primary"
+              />
             </Link>
           </div>
           {/* end logo */}
