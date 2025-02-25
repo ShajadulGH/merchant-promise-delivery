@@ -1,27 +1,3 @@
-// " use client";
-// import { Fragment } from "react";
-
-// import { Upload } from "lucide-react";
-
-// const FileUploaderRestrictions = () => {
-//   return (
-//     <Fragment>
-//       <div className=" w-full text-center rounded-md py-[52px] flex  items-center flex-col bg-red-100">
-//         <div className="h-12 w-12 inline-flex rounded-md bg-muted items-center justify-center mb-3">
-//           <Upload className="h-6 w-6 text-red-600" />
-//         </div>
-//         <h4 className=" text-2xl font-medium mb-1 text-black">
-//           Upload a (.xlsx) File to Import Parcels
-//         </h4>
-//         <div className=" text-xs text-black">
-//           ( Drop files here or click to upload )
-//         </div>
-//       </div>
-//     </Fragment>
-//   );
-// };
-
-// export default FileUploaderRestrictions;
 "use client";
 import { Fragment, useState } from "react";
 import { Upload } from "lucide-react";
