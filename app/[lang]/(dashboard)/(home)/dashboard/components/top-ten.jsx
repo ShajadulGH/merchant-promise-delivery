@@ -25,19 +25,19 @@ const linkList = [
   {
     id: 3,
     name: "Parcel List",
-    link: "www.dribble.com",
+    link: "/store",
     image: parcel,
   },
   {
     id: 4,
     name: "View Invoices",
-    link: "www.linkedin.com",
+    link: "/invoice-list",
     image: Invoices,
   },
   {
     id: 5,
     name: "Issue History",
-    link: "www.github.com",
+    link: "#",
     image: Issue,
   },
 ];
