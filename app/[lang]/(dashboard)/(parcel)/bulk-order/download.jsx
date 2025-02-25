@@ -28,7 +28,7 @@ export default function DownloadExcel() {
   };
 
   return (
-    <div className=" w-full text-center border-dashed border  rounded-md py-[52px] flex  items-center flex-col bg-green-100">
+    <div className=" w-full text-center rounded-md py-[52px] flex  items-center flex-col bg-green-100">
       <Button
         onClick={handleDownload}
         color="success"
@@ -42,12 +42,10 @@ export default function DownloadExcel() {
         />
         Download
       </Button>
-      <h4 className=" text-2xl font-medium mb-1 text-card-foreground/80">
+      <h4 className=" text-2xl font-medium mb-1 text-black">
         Download the Sample File
       </h4>
-      <div className=" text-xs text-muted-foreground">
-        ( Click to Download )
-      </div>
+      <div className=" text-xs  text-black">( Click to Download )</div>
     </div>
   );
 }
