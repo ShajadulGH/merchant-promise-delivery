@@ -3,6 +3,7 @@
 import Card from "@/components/ui/card-snippet";
 import SimpleTable from "./simple-table";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const TailwindUiTable = () => {
   return (
@@ -15,7 +16,9 @@ const TailwindUiTable = () => {
             </h3>
           </div>
           <div className="flex-none">
-            <Button type="button">Create Store</Button>
+            <Link href="/new-store">
+              <Button type="button">Create Store</Button>
+            </Link>
           </div>
         </div>
         <SimpleTable />

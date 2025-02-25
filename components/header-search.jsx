@@ -101,6 +101,15 @@ const HeaderSearch = ({ open, setOpen }) => {
                     <span>Bulk Order</span>
                   </Link>
                 </CommandItem>
+                <CommandItem className="aria-selected:bg-transparent p-0 mb-2.5">
+                  <Link
+                    href="/new-store"
+                    className="flex gap-1 items-center px-2 text-default-500 hover:text-primary "
+                  >
+                    <Icon icon="heroicons:shopping-bag" />
+                    <span>Create Store</span>
+                  </Link>
+                </CommandItem>
               </CommandGroup>
             </div>
           </CommandList>
