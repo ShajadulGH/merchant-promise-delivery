@@ -7,6 +7,7 @@ import SingleDelivery from "@/public/images/social/single-delivery.png";
 import parcel from "@/public/images/social/parcel.png";
 import Invoices from "@/public/images/social/invoice.png";
 import Issue from "@/public/images/social/issue-history.png";
+import Store from "@/public/images/social/store.png";
 import Link from "next/link";
 
 const linkList = [
@@ -36,6 +37,12 @@ const linkList = [
   },
   {
     id: 5,
+    name: "Create New Store",
+    link: "/new-store",
+    image: Store,
+  },
+  {
+    id: 6,
     name: "Issue History",
     link: "#",
     image: Issue,
