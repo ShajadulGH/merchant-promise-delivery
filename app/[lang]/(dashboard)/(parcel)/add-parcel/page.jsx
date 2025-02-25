@@ -3,6 +3,7 @@ import Card from "@/components/ui/card-snippet";
 import VFormWithLabel from "./vform-with-label";
 import Charges from "./charges";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const FormLayout = () => {
   return (
     <div className="space-y-5">
@@ -12,7 +13,9 @@ const FormLayout = () => {
             title={
               <div className="flex items-center justify-between">
                 <span>Add Parcel</span>
-                <Button color="destructive">Bulk Order</Button>
+                <Link href="/bulk-order">
+                  <Button color="destructive">Bulk Order</Button>
+                </Link>
               </div>
             }
           >
