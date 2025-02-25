@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 const FormLayout = () => {
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 mb-5">
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-8">
           <Card

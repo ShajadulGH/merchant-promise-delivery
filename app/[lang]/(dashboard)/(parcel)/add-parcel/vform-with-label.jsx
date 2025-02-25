@@ -185,9 +185,6 @@ const VFormWithLabel = () => {
           </Card>
         </div>
         <div className="col-span-2">
-          <Button className="mr-5" type="submit">
-            Cancle
-          </Button>
           <Button type="submit">Add Parcel</Button>
         </div>
       </div>

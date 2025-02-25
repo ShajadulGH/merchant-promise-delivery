@@ -6,7 +6,7 @@ import EcommerceStats from "./ecommerce-stats";
 import InvoiceListTable from "./invoice-list-table";
 const InvoiceListPage = () => {
   return (
-    <Fragment>
+    <div className="mb-5">
       <Breadcrumbs>
         <BreadcrumbItem>Invoice</BreadcrumbItem>
         <BreadcrumbItem>Invoice List</BreadcrumbItem>
@@ -28,7 +28,7 @@ const InvoiceListPage = () => {
           <InvoiceListTable />
         </CardContent>
       </Card>
-    </Fragment>
+    </div>
   );
 };
 
