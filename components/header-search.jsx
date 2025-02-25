@@ -83,6 +83,15 @@ const HeaderSearch = ({ open, setOpen }) => {
                     <span>Store</span>
                   </Link>
                 </CommandItem>
+                <CommandItem className="aria-selected:bg-transparent p-0 mb-2.5">
+                  <Link
+                    href="/add-parcel"
+                    className="flex gap-1 items-center px-2 text-default-500 hover:text-primary "
+                  >
+                    <Icon icon="heroicons:shopping-bag" />
+                    <span>Add Parcel</span>
+                  </Link>
+                </CommandItem>
               </CommandGroup>
             </div>
           </CommandList>
