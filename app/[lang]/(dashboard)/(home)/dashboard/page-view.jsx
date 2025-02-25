@@ -11,13 +11,6 @@ const EcommercePageView = ({ trans }) => {
         <div className="text-2xl font-medium text-default-800">Dashboard</div>
         <DatePickerWithRange />
       </div>
-      {/* <Card>
-        <CardContent className="p-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">
-            <EcommerceStats />
-          </div>
-        </CardContent>
-      </Card> */}
 
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-8">

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Store",
+  title: "Add Parcel",
 };
 
 const Layout = ({ children }) => {
