@@ -105,7 +105,7 @@ const VFormWithLabel = () => {
                         className="p-5" // Consistent padding
                       />
                     </div>
-                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
+                    <div className="col-span-1 flex flex-col gap-2">
                       <Label htmlFor="store">
                         Select Your District{" "}
                         <span className="text-red-500">*</span>

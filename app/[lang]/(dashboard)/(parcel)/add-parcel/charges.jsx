@@ -56,16 +56,14 @@ const TopTen = () => {
             <span>Total Charge</span>
             <span>0.00</span>
           </div>
-          <div className="flex justify-start">
-            <span className="text-red-500">***</span>
+          <div className="flex justify-start ">
+            <span className="text-red-500">Rules and Regulations</span>
           </div>
           <div className="flex justify-start">
             Cost might vary depending upon the delivery situations and other
             circumstances.
           </div>
-          <div className="flex justify-start">
-            ** Pickup Last Entry Time 4 pm
-          </div>
+          <div className="flex justify-start">Pickup Last Entry Time 4 pm</div>
           <div className="flex justify-start">
             ** On Demand / Express / Fragile Last Entry Time 12:30 pm, Maximum
             size of any product should not be over 2CFT (In general)
