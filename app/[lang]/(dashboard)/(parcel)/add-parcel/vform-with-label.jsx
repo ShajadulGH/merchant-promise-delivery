@@ -29,7 +29,7 @@ const VFormWithLabel = () => {
                     Select Your Store <span className="text-red-500">*</span>
                   </Label>
                   <Select id="store">
-                    <SelectTrigger className="p-5">
+                    <SelectTrigger className="p-5 placeholder:text-base">
                       {" "}
                       {/* Consistent padding */}
                       <SelectValue placeholder="Select Merchant for Test HUB" />
@@ -49,7 +49,7 @@ const VFormWithLabel = () => {
                     type="text"
                     placeholder="Merchant Order ID"
                     id="fullName5"
-                    className="p-5" // Consistent padding
+                    className="p-5 placeholder:text-base" // Consistent padding
                   />
                 </div>
               </div>
@@ -67,7 +67,7 @@ const VFormWithLabel = () => {
               <div className="grid grid-cols-1 gap-4">
                 <div className="col-span-1 flex flex-col gap-2">
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="fullName5">
                         Customer Name <span className="text-red-500">*</span>
                       </Label>
@@ -75,10 +75,10 @@ const VFormWithLabel = () => {
                         type="text"
                         placeholder="Your Name"
                         id="fullName5"
-                        className="p-5" // Consistent padding
+                        className="p-5 placeholder:text-base" // Consistent padding
                       />
                     </div>
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="email5">
                         Customer Contact Number{" "}
                         <span className="text-red-500">*</span>
@@ -87,31 +87,24 @@ const VFormWithLabel = () => {
                         type="email"
                         placeholder="Your Email"
                         id="email5"
-                        className="p-5" // Consistent padding
+                        className="p-5 placeholder:text-base" // Consistent padding
                       />
                     </div>
                   </div>
                 </div>
                 <div className="col-span-1 flex flex-col gap-2">
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="col-span-1 flex flex-col gap-2">
-                      <Label htmlFor="email5">
-                        Customer Address <span className="text-red-500">*</span>
-                      </Label>
-                      <Input
-                        type="email"
-                        placeholder="Your Email"
-                        id="email5"
-                        className="p-5" // Consistent padding
-                      />
+                    <div className="col-span-2 flex flex-col gap-2">
+                      <Label htmlFor="text">Customer Address</Label>
+                      <Textarea placeholder="Type Here.." rows="3" />
                     </div>
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2  flex flex-col gap-2">
                       <Label htmlFor="store">
                         Select Your District{" "}
                         <span className="text-red-500">*</span>
                       </Label>
                       <Select id="store">
-                        <SelectTrigger className="p-5">
+                        <SelectTrigger className="p-5 placeholder:text-base">
                           {" "}
                           {/* Consistent padding */}
                           <SelectValue placeholder="Select" />
@@ -146,12 +139,12 @@ const VFormWithLabel = () => {
               <div className="grid grid-cols-1 gap-4">
                 <div className="col-span-1 flex flex-col gap-2">
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="store">
                         Service Type <span className="text-red-500">*</span>
                       </Label>
                       <Select id="store">
-                        <SelectTrigger className="p-5">
+                        <SelectTrigger className="p-5 placeholder:text-base">
                           {" "}
                           {/* Consistent padding */}
                           <SelectValue placeholder="Select" />
@@ -169,12 +162,12 @@ const VFormWithLabel = () => {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="state">
                         Item Type <span className="text-red-500">*</span>
                       </Label>
                       <Select id="state">
-                        <SelectTrigger className="p-5">
+                        <SelectTrigger className="p-5 placeholder:text-base">
                           {" "}
                           {/* Consistent padding */}
                           <SelectValue placeholder="Select" />
@@ -196,12 +189,12 @@ const VFormWithLabel = () => {
                 </div>
                 <div className="col-span-1 flex flex-col gap-2">
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="state">
                         Weight <span className="text-red-500">*</span>
                       </Label>
                       <Select id="state">
-                        <SelectTrigger className="p-5">
+                        <SelectTrigger className="p-5 placeholder:text-base">
                           {" "}
                           {/* Consistent padding */}
                           <SelectValue placeholder="Select" />
@@ -219,7 +212,7 @@ const VFormWithLabel = () => {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="fullName5">
                         Quantity <span className="text-red-500">*</span>
                       </Label>
@@ -227,14 +220,14 @@ const VFormWithLabel = () => {
                         type="text"
                         placeholder="Your Name"
                         id="fullName5"
-                        className="p-5" // Consistent padding
+                        className="p-5 placeholder:text-base" // Consistent padding
                       />
                     </div>
                   </div>
                 </div>
                 <div className="col-span-1 flex flex-col gap-2">
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="email5">
                         Product Type <span className="text-red-500">*</span>
                       </Label>
@@ -242,23 +235,23 @@ const VFormWithLabel = () => {
                         type="email"
                         placeholder="Your Email"
                         id="email5"
-                        className="p-5" // Consistent padding
+                        className="p-5 placeholder:text-base" // Consistent padding
                       />
                     </div>
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="email5">Product Details</Label>
                       <Input
                         type="email"
                         placeholder="Your Email"
                         id="email5"
-                        className="p-5" // Consistent padding
+                        className="p-5 placeholder:text-base" // Consistent padding
                       />
                     </div>
                   </div>
                 </div>
                 <div className="col-span-1 flex flex-col gap-2">
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="email5">
                         Product Value <span className="text-red-500">*</span>
                       </Label>
@@ -266,10 +259,10 @@ const VFormWithLabel = () => {
                         type="email"
                         placeholder="Your Email"
                         id="email5"
-                        className="p-5" // Consistent padding
+                        className="p-5 placeholder:text-base" // Consistent padding
                       />
                     </div>
-                    <div className="col-span-1 flex flex-col gap-2">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
                       <Label htmlFor="email5">
                         Collection Amount{" "}
                         <span className="text-red-500">*</span>
@@ -278,7 +271,7 @@ const VFormWithLabel = () => {
                         type="email"
                         placeholder="Your Email"
                         id="email5"
-                        className="p-5" // Consistent padding
+                        className="p-5 placeholder:text-base" // Consistent padding
                       />
                     </div>
                   </div>
