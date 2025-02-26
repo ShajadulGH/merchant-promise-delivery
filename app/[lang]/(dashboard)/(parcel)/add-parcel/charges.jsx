@@ -56,6 +56,32 @@ const TopTen = () => {
             <span>Total Charge</span>
             <span>0.00</span>
           </div>
+          <div className="flex justify-start">
+            <span className="text-red-500">***</span>
+          </div>
+          <div className="flex justify-start">
+            Cost might vary depending upon the delivery situations and other
+            circumstances.
+          </div>
+          <div className="flex justify-start">
+            ** Pickup Last Entry Time 4 pm
+          </div>
+          <div className="flex justify-start">
+            ** On Demand / Express / Fragile Last Entry Time 12:30 pm, Maximum
+            size of any product should not be over 2CFT (In general)
+          </div>
+          <div className="flex justify-start">
+            ** Use Fragile Type for Cosmetics, Liquid grocery, Herbals, Gift
+            Items,Electronic gadgets, Lights , Glass items, Food items (dry)
+          </div>
+          <div className="flex justify-start">
+            ** Use Express Delivery Inside Dhaka (2-3 hours) for Cooked Foods
+            and other emergency delivery
+          </div>
+          <div className="flex justify-start">
+            ** Inside Dhaka Normal Delivery will take 24-48 hours, On Demand &
+            Fragile take 8 hours, Out Side Dhaka it may take 3-5 days
+          </div>
         </div>
       </CardContent>
     </Card>
