@@ -60,6 +60,40 @@ const VFormWithLabel = () => {
             </Select>
           </div>
         </div>
+        <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
+          <Label htmlFor="store">Pickup Address</Label>
+          <div>
+            <Select id="store">
+              <SelectTrigger>
+                <SelectValue placeholder="Select" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="alberta">Alberta</SelectItem>
+                <SelectItem value="british">British Columbia</SelectItem>
+                <SelectItem value="manitoba">Manitoba</SelectItem>
+                <SelectItem value="brunswick">New Brunswick</SelectItem>
+                <SelectItem value="ontario">Ontario</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+        <div className="col-span-2 lg:col-span-1 flex flex-col gap-2">
+          <Label htmlFor="store">Return Address</Label>
+          <div>
+            <Select id="store">
+              <SelectTrigger>
+                <SelectValue placeholder="Select" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="alberta">Alberta</SelectItem>
+                <SelectItem value="british">British Columbia</SelectItem>
+                <SelectItem value="manitoba">Manitoba</SelectItem>
+                <SelectItem value="brunswick">New Brunswick</SelectItem>
+                <SelectItem value="ontario">Ontario</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
         <div className="col-span-2">
           <Button type="submit">Create Store</Button>
         </div>
