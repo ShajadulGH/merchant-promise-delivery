@@ -44,7 +44,7 @@ const linkList = [
   {
     id: 6,
     name: "Issue History",
-    link: "#",
+    link: "/issue-history",
     image: Issue,
   },
 ];
