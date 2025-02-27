@@ -15,8 +15,7 @@ export default function Messages({
   handleReply,
 }) {
   const { senderId, message: chatMessage, time } = message;
-  const { avatar } = contact;
-  console.log(avatar);
+
   return (
     <div className="block md:px-6 px-0">
       {senderId === profile.id ? (
@@ -61,8 +60,8 @@ export default function Messages({
           <div className="flex-none self-end -translate-y-5">
             <div className="h-8 w-8 rounded-full">
               <img
-                src={avatar}
-                alt={avatar}
+                src="/avatar.jpg"
+                alt="/avatar.jpg"
                 className="block w-full h-full object-cover rounded-full"
               />
             </div>
@@ -73,8 +72,8 @@ export default function Messages({
           <div className="flex-none self-end -translate-y-5">
             <div className="h-8 w-8 rounded-full">
               <img
-                src={avatar}
-                alt={avatar}
+                src="/avatar.jpg"
+                alt="/avatar.jpg"
                 className="block w-full h-full object-cover rounded-full"
               />
             </div>
