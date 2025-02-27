@@ -117,9 +117,9 @@ const CreateTask = ({ open, onClose }) => {
               )}
             </div>
           </div>
-          <SheetFooter className="pb-10">
+          <SheetFooter className="pb-10 flex flex-row">
             <SheetClose>
-              <Button type="button" variant="outline">
+              <Button className="mr-3" type="button" variant="outline">
                 Cancel
               </Button>
             </SheetClose>
