@@ -126,14 +126,17 @@ import IssueList from "./Issue-list";
 import ChatPage from "./chat";
 import EmptyMessage from "./empty-message"; // Import the EmptyMessage component
 import { useState } from "react";
-
+import CreateIssue from "./create-issue";
 const IssueHistory = () => {
   const [selectedIssue, setSelectedIssue] = useState(null);
+  const [open, setOpen] = useState(null);
 
   const handleIssueSelect = (issue) => {
     setSelectedIssue(issue);
   };
-
+  const handleSheetOpen = () => {
+    setOpen(!open);
+  };
   return (
     <div className="mb-5">
       <Breadcrumbs className="mb-5">
@@ -148,7 +151,7 @@ const IssueHistory = () => {
         <CardContent>
           <div className="grid grid-cols-4 gap-4">
             <div className="col-span-4 lg:col-span-1 flex flex-col gap-2">
-              <Button className="p-5">
+              <Button onClick={handleSheetOpen} className="p-5">
                 <Plus className="w-4 h-4 mr-1" />
                 Create Issue
               </Button>
@@ -216,6 +219,7 @@ const IssueHistory = () => {
           )}
         </div>
       </div>
+      <CreateIssue open={open} onClose={handleSheetOpen} />
     </div>
   );
 };
