@@ -65,6 +65,11 @@ export const menusConfig = {
       icon: Envelope,
       href: "/store",
     },
+    {
+      title: "report issue",
+      icon: Envelope,
+      href: "/issue-history",
+    },
     // {
     //   title: "Menu",
     //   icon: DashBoard,
@@ -118,6 +123,11 @@ export const menusConfig = {
             icon: Envelope,
             href: "/store",
           },
+          {
+            title: "report issue",
+            icon: Envelope,
+            href: "/issue-history",
+          },
         ],
       },
     ],
@@ -145,6 +155,11 @@ export const menusConfig = {
         title: "store",
         icon: Envelope,
         href: "/store",
+      },
+      {
+        title: "report issue",
+        icon: Envelope,
+        href: "/issue-history",
       },
     ],
   },

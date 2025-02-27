@@ -1,8 +1,8 @@
 export const metadata = {
   title: "Issue History",
 };
-const InvoiceLayout = ({ children }) => {
+const IssueLayout = ({ children }) => {
   return <>{children}</>;
 };
 
-export default InvoiceLayout;
+export default IssueLayout;
