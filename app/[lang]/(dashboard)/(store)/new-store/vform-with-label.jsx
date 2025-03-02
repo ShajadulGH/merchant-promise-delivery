@@ -61,11 +61,14 @@ const VFormWithLabel = () => {
             </Select>
           </div>
         </div>
-        <div className="col-span-2 lg:col-span-1 flex flex-col gap-2 mt-5 mb-5">
-          <Checkbox id="default_2">Default Pickup Address</Checkbox>
-        </div>
-        <div className="col-span-2 lg:col-span-1 flex flex-col gap-2 mt-5 mb-5">
-          <Checkbox id="default_2">Default Return Address</Checkbox>
+        <div className="col-span-2 lg:col-span-1 flex flex-col gap-2 mt-5 mb-5 space-y-5">
+          <Checkbox color="dark" id="default_2">
+            Default Pickup Address
+          </Checkbox>
+
+          <Checkbox color="dark" id="default_2">
+            Default Return Address
+          </Checkbox>
         </div>
         <div className="col-span-2">
           <Button type="submit">Create Store</Button>
