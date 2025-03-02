@@ -86,7 +86,7 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { Card } from "@/components/ui/card";
-
+import { ScrollArea } from "@/components/ui/scroll-area";
 // Dummy data for issues
 const dummyIssue = [
   {
@@ -239,6 +239,156 @@ const dummyIssue = [
       },
     ],
   },
+  {
+    id: 6,
+    name: "Jessica Adams",
+    text: "Hey, are we still on for the team outing this weekend?",
+    date: "2024-02-14T18:30:00Z",
+    messages: [
+      {
+        senderId: 9,
+        message: "Hey, are we still on for the team outing this weekend?",
+        time: "2024-02-14T18:30:00Z",
+      },
+      {
+        senderId: 10,
+        message: "Yes! Looking forward to it. See you all there!",
+        time: "2024-02-14T18:40:00Z",
+      },
+    ],
+    contacts: [
+      {
+        id: 9,
+        fullName: "Jessica Adams",
+        avatar: "/avatar.jpg",
+      },
+      {
+        id: 10,
+        fullName: "Ethan Harris",
+        avatar: "/avatar.jpg",
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: "Jessica Adams",
+    text: "Hey, are we still on for the team outing this weekend?",
+    date: "2024-02-14T18:30:00Z",
+    messages: [
+      {
+        senderId: 9,
+        message: "Hey, are we still on for the team outing this weekend?",
+        time: "2024-02-14T18:30:00Z",
+      },
+      {
+        senderId: 10,
+        message: "Yes! Looking forward to it. See you all there!",
+        time: "2024-02-14T18:40:00Z",
+      },
+    ],
+    contacts: [
+      {
+        id: 9,
+        fullName: "Jessica Adams",
+        avatar: "/avatar.jpg",
+      },
+      {
+        id: 10,
+        fullName: "Ethan Harris",
+        avatar: "/avatar.jpg",
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: "Jessica Adams",
+    text: "Hey, are we still on for the team outing this weekend?",
+    date: "2024-02-14T18:30:00Z",
+    messages: [
+      {
+        senderId: 9,
+        message: "Hey, are we still on for the team outing this weekend?",
+        time: "2024-02-14T18:30:00Z",
+      },
+      {
+        senderId: 10,
+        message: "Yes! Looking forward to it. See you all there!",
+        time: "2024-02-14T18:40:00Z",
+      },
+    ],
+    contacts: [
+      {
+        id: 9,
+        fullName: "Jessica Adams",
+        avatar: "/avatar.jpg",
+      },
+      {
+        id: 10,
+        fullName: "Ethan Harris",
+        avatar: "/avatar.jpg",
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: "Jessica Adams",
+    text: "Hey, are we still on for the team outing this weekend?",
+    date: "2024-02-14T18:30:00Z",
+    messages: [
+      {
+        senderId: 9,
+        message: "Hey, are we still on for the team outing this weekend?",
+        time: "2024-02-14T18:30:00Z",
+      },
+      {
+        senderId: 10,
+        message: "Yes! Looking forward to it. See you all there!",
+        time: "2024-02-14T18:40:00Z",
+      },
+    ],
+    contacts: [
+      {
+        id: 9,
+        fullName: "Jessica Adams",
+        avatar: "/avatar.jpg",
+      },
+      {
+        id: 10,
+        fullName: "Ethan Harris",
+        avatar: "/avatar.jpg",
+      },
+    ],
+  },
+  {
+    id: 10,
+    name: "Jessica Adams",
+    text: "Hey, are we still on for the team outing this weekend?",
+    date: "2024-02-14T18:30:00Z",
+    messages: [
+      {
+        senderId: 9,
+        message: "Hey, are we still on for the team outing this weekend?",
+        time: "2024-02-14T18:30:00Z",
+      },
+      {
+        senderId: 10,
+        message: "Yes! Looking forward to it. See you all there!",
+        time: "2024-02-14T18:40:00Z",
+      },
+    ],
+    contacts: [
+      {
+        id: 9,
+        fullName: "Jessica Adams",
+        avatar: "/avatar.jpg",
+      },
+      {
+        id: 10,
+        fullName: "Ethan Harris",
+        avatar: "/avatar.jpg",
+      },
+    ],
+  },
 ];
 
 // IssueList Component
@@ -246,31 +396,33 @@ const IssueList = ({ onIssueSelect, selectedIssue }) => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Card>
-      {dummyIssue.map((issue, index) => (
-        <div
-          key={`issue-key-${index}`}
-          className={cn(
-            "flex flex-col py-5 px-6 border-b border-default-100 hover:bg-red-200 cursor-pointer group relative",
-            {
-              "bg-primary/10": selectedIssue?.id === issue.id,
-            }
-          )}
-          onClick={() => onIssueSelect(issue)}
-        >
-          <div className="text-lg text-black font-semibold mr-4 min-w-max">
-            {issue.name}
+    <Card className="h-screen">
+      <ScrollArea className="h-full">
+        {dummyIssue.map((issue, index) => (
+          <div
+            key={`issue-key-${index}`}
+            className={cn(
+              "flex flex-col py-5 px-6 border-b border-default-100 hover:bg-red-200 cursor-pointer group relative ",
+              {
+                "bg-primary/10": selectedIssue?.id === issue.id,
+              }
+            )}
+            onClick={() => onIssueSelect(issue)}
+          >
+            <div className="text-lg text-black font-semibold mr-4 min-w-max">
+              {issue.name}
+            </div>
+            <div className="flex-1  flex-shrink overflow-hidden min-w-[100px] mr-7">
+              <p className="truncate text-md text-black ">{issue.text}</p>
+            </div>
+            <div className="text-md text-black  whitespace-nowrap">
+              {formatDistanceToNow(new Date(issue.date), {
+                addSuffix: true,
+              })}
+            </div>
           </div>
-          <div className="flex-1  flex-shrink overflow-hidden min-w-[100px] mr-7">
-            <p className="truncate text-md text-black ">{issue.text}</p>
-          </div>
-          <div className="text-md text-black  whitespace-nowrap">
-            {formatDistanceToNow(new Date(issue.date), {
-              addSuffix: true,
-            })}
-          </div>
-        </div>
-      ))}
+        ))}
+      </ScrollArea>
     </Card>
   );
 };

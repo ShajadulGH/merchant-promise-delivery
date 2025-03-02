@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { UploadCloud } from "lucide-react";
 import {
   Sheet,
@@ -10,16 +9,16 @@ import {
   SheetFooter,
   SheetHeader,
 } from "@/components/ui/sheet";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import { Textarea } from "@/components/ui/textarea";
 import { useEffect, useState } from "react";
+import Select from "react-select";
 
+const users = [
+  { value: "202", label: "Cleopetra" },
+  { value: "203", label: "Nicolas" },
+  { value: "204", label: "John Doe" },
+];
 const styles = {
   option: (provided, state) => ({
     ...provided,
@@ -44,42 +43,39 @@ const CreateTask = ({ open, onClose }) => {
         <form className=" h-full flex flex-col justify-between">
           <div className="space-y-4">
             <div>
-              <Label htmlFor="store">
-                Category <span className="text-red-500">*</span>
+              <Label
+                htmlFor="assignedMember"
+                className="mb-1.5 text-default-600"
+              >
+                Assigned To
               </Label>
-              <Select id="store">
-                <SelectTrigger className="p-5 placeholder:text-base">
-                  <SelectValue placeholder="Select Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="alberta">Alberta</SelectItem>
-                  <SelectItem value="british">British Columbia</SelectItem>
-                  <SelectItem value="manitoba">Manitoba</SelectItem>
-                  <SelectItem value="brunswick">New Brunswick</SelectItem>
-                  <SelectItem value="ontario">Ontario</SelectItem>
-                </SelectContent>
-              </Select>
+              <Select
+                className="react-select"
+                classNamePrefix="select"
+                options={users}
+                styles={styles}
+              />
             </div>
             <div>
-              <Label htmlFor="store">
-                Sub Category <span className="text-red-500">*</span>
+              <Label
+                htmlFor="assignedMember"
+                className="mb-1.5 text-default-600"
+              >
+                Assigned To
               </Label>
-              <Select id="store">
-                <SelectTrigger className="p-5 placeholder:text-base">
-                  <SelectValue placeholder="Select Sub Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="alberta">Alberta</SelectItem>
-                  <SelectItem value="british">British Columbia</SelectItem>
-                  <SelectItem value="manitoba">Manitoba</SelectItem>
-                  <SelectItem value="brunswick">New Brunswick</SelectItem>
-                  <SelectItem value="ontario">Ontario</SelectItem>
-                </SelectContent>
-              </Select>
+              <Select
+                className="react-select"
+                classNamePrefix="select"
+                options={users}
+                styles={styles}
+                // isMulti
+              />
             </div>
             <div>
               {" "}
-              <Label htmlFor="text">Description</Label>
+              <Label htmlFor="text">
+                Description <span className="text-red-500">*</span>
+              </Label>
               <Textarea placeholder="Description..." rows="3" />
             </div>
             <div>
@@ -99,7 +95,7 @@ const CreateTask = ({ open, onClose }) => {
               {/* Custom Upload Button */}
               <label
                 htmlFor="file-upload"
-                className="flex items-center justify-center gap-2 px-4 py-2 text-white bg-red-600 rounded-lg cursor-pointer hover:bg-blue-700 transition"
+                className="flex items-center justify-center gap-2 px-4 py-2 text-white bg-red-600 rounded-lg cursor-pointer hover:bg-red-700 transition"
               >
                 <UploadCloud className="w-5 h-5" />
                 Upload
