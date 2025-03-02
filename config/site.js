@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Promise Delivery",
   description: null,
-  theme: "violet",
+  theme: "red",
   layout: "semi-box",
   // semi-box, horizontal, vertical
   hideSideBar: false,

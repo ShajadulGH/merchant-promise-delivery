@@ -65,7 +65,6 @@ import PersonalDetails from "./personal-details";
 import ChangePassword from "./change-password";
 import BankDetails from "./bank-details";
 import SocialDetails from "./social-details";
-// import CommingSoon from "./comming-soon";
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("personal"); // State to manage the active tab
