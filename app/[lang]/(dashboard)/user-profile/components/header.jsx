@@ -73,7 +73,7 @@ const Header = () => {
             </div>
             <Button
               asChild
-              className="ml-auto rounded px-5 hidden lg:flex"
+              className="ml-auto rounded px-3 lg:px-5 flex text-sm lg:text-base" // Adjusted padding and font size
               size="sm"
             >
               <Link href="/user-profile/edit">
