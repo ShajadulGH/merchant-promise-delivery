@@ -46,7 +46,7 @@ export { default as UserSign } from "./duel-tone/user-sign.svg";
 export { default as Web } from "./duel-tone/web.svg";
 export { default as Mail2 } from "./duel-tone/mail2.svg";
 export { default as BlankVector } from "./man-vector.svg";
-export { default as DashBoard } from "./duel-tone/dashboard.svg";
+export { default as DashBoard } from "./duel-tone/dashboard-svgrepo.svg";
 export { default as Application } from "./duel-tone/application.svg";
 export { default as Authentication } from "./duel-tone/authentication.svg";
 export { default as Components } from "./duel-tone/components.svg";
@@ -87,6 +87,13 @@ export { default as Icons } from "./duel-tone/icons.svg";
 export { default as Sun } from "./duel-tone/sun.svg";
 export { default as Moon } from "./duel-tone/moon.svg";
 export { default as Device } from "./duel-tone/device.svg";
+export { default as Delivery } from "./duel-tone/delivery2.svg";
+export { default as Invoice } from "./duel-tone/invoice-svgrepo.svg";
+export { default as Store } from "./duel-tone/store-svgrepo.svg";
+export { default as Issue } from "./duel-tone/issue-svgrepo.svg";
+export { default as Taka } from "./duel-tone/taka-svgrepo.svg";
+export { default as Coverage } from "./duel-tone/map-svgrepo-com.svg";
+export { default as Operator } from "./duel-tone/operator-svgrepo.svg";
 
 // sidebar icon
 export { default as FolderTree } from "./home/foldertree.svg";
