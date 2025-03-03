@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
-
 const BankDetails = () => {
   const [paymentType, setPaymentType] = useState(""); // State to track selected payment type
   const paymentOptions = [
