@@ -94,6 +94,8 @@ export { default as Issue } from "./duel-tone/issue-svgrepo.svg";
 export { default as Taka } from "./duel-tone/taka-svgrepo.svg";
 export { default as Coverage } from "./duel-tone/map-svgrepo-com.svg";
 export { default as Operator } from "./duel-tone/operator-svgrepo.svg";
+export { default as Promo } from "./duel-tone/promo-svgrepo.svg";
+export { default as Api } from "./duel-tone/developer-api.svg";
 
 // sidebar icon
 export { default as FolderTree } from "./home/foldertree.svg";

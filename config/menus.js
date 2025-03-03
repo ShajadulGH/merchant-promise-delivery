@@ -7,6 +7,8 @@ import {
   Taka,
   Coverage,
   Operator,
+  Promo,
+  Api,
 } from "@/components/svg";
 
 export const menusConfig = {
@@ -50,6 +52,16 @@ export const menusConfig = {
       title: "operators",
       icon: Operator,
       href: "/operators",
+    },
+    {
+      title: "promo",
+      icon: Promo,
+      href: "/promo",
+    },
+    {
+      title: "developer api",
+      icon: Api,
+      href: "/developer-api",
     },
     // {
     //   title: "Menu",
@@ -124,6 +136,16 @@ export const menusConfig = {
             icon: Operator,
             href: "/operators",
           },
+          {
+            title: "promo",
+            icon: Promo,
+            href: "/promo",
+          },
+          {
+            title: "developer api",
+            icon: Api,
+            href: "/developer-api",
+          },
         ],
       },
     ],
@@ -171,6 +193,16 @@ export const menusConfig = {
         title: "operators",
         icon: Operator,
         href: "/operators",
+      },
+      {
+        title: "promo",
+        icon: Promo,
+        href: "/promo",
+      },
+      {
+        title: "developer api",
+        icon: Api,
+        href: "/developer-api",
       },
     ],
   },
