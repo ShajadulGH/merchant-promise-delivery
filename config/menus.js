@@ -75,6 +75,11 @@ export const menusConfig = {
       icon: Envelope,
       href: "/pricing-plan",
     },
+    {
+      title: "coverage area",
+      icon: Envelope,
+      href: "/coverage-area",
+    },
     // {
     //   title: "Menu",
     //   icon: DashBoard,
@@ -138,6 +143,11 @@ export const menusConfig = {
             icon: Envelope,
             href: "/pricing-plan",
           },
+          {
+            title: "coverage area",
+            icon: Envelope,
+            href: "/coverage-area",
+          },
         ],
       },
     ],
@@ -175,6 +185,11 @@ export const menusConfig = {
         title: "pricing plan",
         icon: Envelope,
         href: "/pricing-plan",
+      },
+      {
+        title: "coverage area",
+        icon: Envelope,
+        href: "/coverage-area",
       },
     ],
   },
