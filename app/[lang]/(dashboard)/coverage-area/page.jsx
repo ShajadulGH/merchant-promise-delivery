@@ -302,7 +302,19 @@ import Card from "@/components/ui/card-snippet";
 
 import { districtsData } from "./data";
 import { ChevronDown } from "lucide-react"; // Import ChevronDown icon
+import Select from "react-select";
+import { Label } from "@/components/ui/label";
 
+const users = [
+  { value: "pickup", label: "Pickup Available" },
+  { value: "retun", label: "Return Available" },
+];
+// const styles = {
+//   option: (provided, state) => ({
+//     ...provided,
+//     fontSize: "14px",
+//   }),
+// };
 const TailwindUiTable = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
   const [selectedZone, setSelectedZone] = useState(null);
@@ -362,8 +374,8 @@ const TailwindUiTable = () => {
       <div className="col-span-12 mb-5">
         <Card title="Coverage Area">
           {/* Search Bar for Districts */}
-          <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-3 lg:col-span-1 mb-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="col-span-2 lg:col-span-1 mb-4">
               {" "}
               <input
                 type="text"
@@ -373,8 +385,22 @@ const TailwindUiTable = () => {
                 className="w-full p-2 border border-gray-300 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-red-600"
               />
             </div>
-            <div className="cold-span-3 lg:col-span-1">Something!</div>
-            <div className="col-span-3 lg:col-span-1">Something!</div>
+
+            <div className="col-span-2 lg:col-span-1">
+              {/* <Label
+                htmlFor="assignedMember"
+                className="mb-1.5 text-default-600"
+              >
+                Assigned To
+              </Label> */}
+              <Select
+                className="react-select"
+                classNamePrefix="select"
+                options={users}
+                // styles={styles}
+                isMulti
+              />
+            </div>
           </div>
 
           {/* Districts List */}
