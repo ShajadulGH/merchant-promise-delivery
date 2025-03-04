@@ -22,8 +22,8 @@ const Promotion = () => {
           </div>
         </div>
       </CardSnippet>
-      <Card className="p-5 text-center">
-        <div className="flex justify-center items-center">
+      <Card className="p-5">
+        <div className="flex justify-center items-center h-[500px]">
           <Icon icon="mdi:tag" className="w-8 h-8 text-red-600 mr-2" />{" "}
           {/* Promo icon */}
           <p className="font-semibold text-lg text-gray-700">
