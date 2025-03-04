@@ -1,13 +1,18 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import CardSnippet from "@/components/ui/card-snippet";
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import Stepper from "./Components/stepper";
 import TimeLine from "./Components/timeline";
-
+import CreateIssue from "../../(issue)/issue-history/create-issue";
 const steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 const ParcelInfo = () => {
+  const [open, setOpen] = useState(null);
+  const handleSheetOpen = () => {
+    setOpen(!open);
+  };
   return (
     <>
       <CardSnippet
@@ -46,7 +51,9 @@ const ParcelInfo = () => {
             </div>
           </div>
           <div className="col-span-2 lg:col-span-1 m-5 flex justify-center items-center lg:justify-end">
-            <Button className="rounded-[5px]">Report Issue</Button>
+            <Button onClick={handleSheetOpen} className="rounded-[5px]">
+              Report Issue
+            </Button>
           </div>
         </div>
       </CardSnippet>
@@ -200,6 +207,7 @@ const ParcelInfo = () => {
               </div>
             </div>
           </Card>
+          <CreateIssue open={open} onClose={handleSheetOpen} />
         </div>
       </div>
     </>
