@@ -83,11 +83,15 @@ const NoticeItem = ({ notice, isOpen, onClick }) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={onClick}
       >
-        <div>
-          <h3 className="text-lg font-semibold">{notice.title}</h3>
-          <p className="text-sm text-gray-500">
-            {moment(notice.date).locale("bn").format("LL")}
-          </p>
+        <div className="flex flex-col lg:justify-between lg:flex-row lg:items-center w-full">
+          <div>
+            <h3 className="text-lg font-semibold">{notice.title}</h3>
+          </div>
+          <div>
+            <p className="text-sm text-gray-500 mr-10">
+              {moment(notice.date).locale("bn").format("LL")}
+            </p>
+          </div>
         </div>
         <svg
           className={`w-6 h-6 transform transition-transform ${
