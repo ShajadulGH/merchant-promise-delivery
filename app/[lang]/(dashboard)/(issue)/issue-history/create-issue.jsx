@@ -68,7 +68,7 @@ const CreateTask = ({ open, onClose }) => {
                 classNamePrefix="select"
                 options={users}
                 styles={styles}
-                isMulti
+                // isMulti
               />
             </div>
             <div>
