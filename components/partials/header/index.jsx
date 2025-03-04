@@ -12,14 +12,20 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import MobileMenuHandler from "./mobile-menu-handler";
 import ClassicHeader from "./layout/classic-header";
 import FullScreen from "./full-screen";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const NavTools = ({ isDesktop, isMobile, sidebarType }) => {
   return (
     <div className="nav-tools flex items-center  gap-2">
+      <Link href="/add-parcel">
+        <Button className="rounded-[5px]">Add Parcel</Button>
+      </Link>
       {isDesktop && <Language />}
+
       {isDesktop && <FullScreen />}
 
-      <ThemeButton />
+      {/* <ThemeButton /> */}
 
       <div className="ltr:pl-2 rtl:pr-2">
         <ProfileInfo />
