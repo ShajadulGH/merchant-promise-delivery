@@ -298,23 +298,32 @@
 "use client";
 
 import { useState } from "react";
-import Card from "@/components/ui/card-snippet";
+import Card1 from "@/components/ui/card-snippet";
 
 import { districtsData } from "./data";
 import { ChevronDown } from "lucide-react"; // Import ChevronDown icon
 import Select from "react-select";
 import { Label } from "@/components/ui/label";
+import { Card } from "@/components/ui/card";
 
 const users = [
   { value: "pickup", label: "Pickup Available" },
-  { value: "retun", label: "Return Available" },
+  { value: "return", label: "Return Available" },
 ];
-// const styles = {
-//   option: (provided, state) => ({
-//     ...provided,
-//     fontSize: "14px",
-//   }),
-// };
+
+// Custom styles for react-select
+const customStyles = {
+  control: (provided, state) => ({
+    ...provided,
+    borderColor: state.isFocused ? "#ef4444" : "#d1d5db", // Red border when focused
+    borderWidth: "2px", // Increase border thickness
+    boxShadow: state.isFocused ? "0 0 0 2px #ef4444" : "none", // Red focus ring
+    "&:hover": {
+      borderColor: "#ef4444", // Red border on hover
+    },
+  }),
+};
+
 const TailwindUiTable = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
   const [selectedZone, setSelectedZone] = useState(null);
@@ -372,11 +381,10 @@ const TailwindUiTable = () => {
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-12 mb-5">
-        <Card title="Coverage Area">
+        <Card1 title="Coverage Area">
           {/* Search Bar for Districts */}
           <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2 lg:col-span-1 mb-4">
-              {" "}
               <input
                 type="text"
                 placeholder="Search districts..."
@@ -387,18 +395,13 @@ const TailwindUiTable = () => {
             </div>
 
             <div className="col-span-2 lg:col-span-1">
-              {/* <Label
-                htmlFor="assignedMember"
-                className="mb-1.5 text-default-600"
-              >
-                Assigned To
-              </Label> */}
               <Select
                 className="react-select"
                 classNamePrefix="select"
                 options={users}
-                // styles={styles}
+                styles={customStyles} // Apply custom styles
                 isMulti
+                placeholder="Pickup or Return Availability"
               />
             </div>
           </div>
@@ -438,71 +441,73 @@ const TailwindUiTable = () => {
 
                 {/* Zones Dropdown (Only shown if district is expanded) */}
                 {expandedDistrict === district.district && (
-                  <div className="mt-2 pl-4">
-                    {/* Search Bar for Zones */}
-                    <div className="mb-4">
-                      <input
-                        type="text"
-                        placeholder="Search zones..."
-                        value={zoneSearchQuery}
-                        onChange={(e) => setZoneSearchQuery(e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-red-600"
-                      />
-                    </div>
+                  <Card className="p-5 m-2 bg-gray-50">
+                    <div className="mt-2">
+                      {/* Search Bar for Zones */}
+                      <div className="mb-4">
+                        <input
+                          type="text"
+                          placeholder="Search zones..."
+                          value={zoneSearchQuery}
+                          onChange={(e) => setZoneSearchQuery(e.target.value)}
+                          className="w-full p-2 border border-gray-300 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-red-600"
+                        />
+                      </div>
 
-                    {filteredZones?.map((zone, zoneIndex) => (
-                      <div key={zoneIndex}>
-                        {/* Zone Card */}
-                        <div
-                          className="p-3 border rounded-[5px] cursor-pointer hover:bg-red-100 flex items-center justify-between"
-                          onClick={() => handleZoneClick(zone)}
-                        >
-                          <h4 className="font-medium">{zone.zone}</h4>
-                          <ChevronDown
-                            className={`w-5 h-5 transition-transform ${
-                              expandedZone === zone.zone ? "rotate-180" : ""
-                            }`}
-                          />
-                        </div>
+                      {filteredZones?.map((zone, zoneIndex) => (
+                        <div key={zoneIndex}>
+                          {/* Zone Card */}
+                          <div
+                            className="p-3 border rounded-[5px] cursor-pointer hover:bg-red-100 flex items-center justify-between mb-2 shadow-sm"
+                            onClick={() => handleZoneClick(zone)}
+                          >
+                            <h4 className="font-medium">{zone.zone}</h4>
+                            <ChevronDown
+                              className={`w-5 h-5 transition-transform ${
+                                expandedZone === zone.zone ? "rotate-180" : ""
+                              }`}
+                            />
+                          </div>
 
-                        {/* Areas Dropdown (Only shown if zone is expanded) */}
-                        {expandedZone === zone.zone && (
-                          <div className="mt-2 pl-6">
-                            {/* Search Bar for Areas */}
-                            <div className="mb-4">
-                              <input
-                                type="text"
-                                placeholder="Search areas..."
-                                value={areaSearchQuery}
-                                onChange={(e) =>
-                                  setAreaSearchQuery(e.target.value)
-                                }
-                                className="w-full p-2 border border-gray-300 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-red-600"
-                              />
-                            </div>
+                          {/* Areas Dropdown (Only shown if zone is expanded) */}
+                          {expandedZone === zone.zone && (
+                            <div className="mt-2 mb-2 p-5 shadow-sm">
+                              {/* Search Bar for Areas */}
+                              <div className="mb-4">
+                                <input
+                                  type="text"
+                                  placeholder="Search areas..."
+                                  value={areaSearchQuery}
+                                  onChange={(e) =>
+                                    setAreaSearchQuery(e.target.value)
+                                  }
+                                  className="w-full p-2 border border-gray-300 rounded-[5px] focus:outline-none focus:ring-2 focus:ring-red-600"
+                                />
+                              </div>
 
-                            <div className="p-3 border rounded-[5px] bg-gray-50">
-                              <div className="grid grid-cols-2 gap-2">
-                                {filteredAreas?.map((area, areaIndex) => (
-                                  <p
-                                    key={areaIndex}
-                                    className="text-sm text-gray-700"
-                                  >
-                                    {area}
-                                  </p>
-                                ))}
+                              <div className="p-3 border rounded-[5px] bg-white shadow-sm">
+                                <div className="grid grid-cols-2 gap-2">
+                                  {filteredAreas?.map((area, areaIndex) => (
+                                    <p
+                                      key={areaIndex}
+                                      className="text-sm text-gray-700"
+                                    >
+                                      {area}
+                                    </p>
+                                  ))}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </Card>
                 )}
               </div>
             ))}
           </div>
-        </Card>
+        </Card1>
       </div>
     </div>
   );
