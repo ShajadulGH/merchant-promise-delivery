@@ -1,12 +1,15 @@
 "use client";
 
-import Card from "@/components/ui/card-snippet";
+import CardSnippet from "@/components/ui/card-snippet";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-const Promo = () => {
+import { Card } from "@/components/ui/card";
+import { Icon } from "@iconify/react"; // Import the Icon component from @iconify/react
+
+const Promotion = () => {
   return (
-    <div className=" space-y-6">
-      <Card title="My Promo">
+    <div className="space-y-6">
+      <CardSnippet title="My Promo">
         <div className="grid grid-cols-2">
           <div className="flex gap-4 col-span-2 lg:col-span-1">
             <Input
@@ -18,9 +21,18 @@ const Promo = () => {
             <Button type="submit">Apply Promo</Button>
           </div>
         </div>
+      </CardSnippet>
+      <Card className="p-5 text-center">
+        <div className="flex justify-center items-center">
+          <Icon icon="mdi:tag" className="w-8 h-8 text-red-600 mr-2" />{" "}
+          {/* Promo icon */}
+          <p className="font-semibold text-lg text-gray-700">
+            No Promo Code Found!!!
+          </p>
+        </div>
       </Card>
     </div>
   );
 };
 
-export default Promo;
+export default Promotion;
