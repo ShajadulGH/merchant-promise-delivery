@@ -96,6 +96,8 @@ export { default as Coverage } from "./duel-tone/map-svgrepo-com.svg";
 export { default as Operator } from "./duel-tone/operator-svgrepo.svg";
 export { default as Promo } from "./duel-tone/promo-svgrepo.svg";
 export { default as Api } from "./duel-tone/developer-api.svg";
+export { default as Notice } from "./duel-tone/notice-svgrepo.svg";
+export { default as Support } from "./duel-tone/support-svgrepo-com.svg";
 
 // sidebar icon
 export { default as FolderTree } from "./home/foldertree.svg";

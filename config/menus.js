@@ -9,6 +9,8 @@ import {
   Operator,
   Promo,
   Api,
+  Notice,
+  Support,
 } from "@/components/svg";
 
 export const menusConfig = {
@@ -62,6 +64,16 @@ export const menusConfig = {
       title: "developer api",
       icon: Api,
       href: "/developer-api",
+    },
+    {
+      title: "notice",
+      icon: Notice,
+      href: "/notice",
+    },
+    {
+      title: "help center",
+      icon: Support,
+      href: "/help-center",
     },
     // {
     //   title: "Menu",
@@ -146,6 +158,16 @@ export const menusConfig = {
             icon: Api,
             href: "/developer-api",
           },
+          {
+            title: "notice",
+            icon: Notice,
+            href: "/notice",
+          },
+          {
+            title: "help center",
+            icon: Support,
+            href: "/help-center",
+          },
         ],
       },
     ],
@@ -203,6 +225,16 @@ export const menusConfig = {
         title: "developer api",
         icon: Api,
         href: "/developer-api",
+      },
+      {
+        title: "notice",
+        icon: Notice,
+        href: "/notice",
+      },
+      {
+        title: "help center",
+        icon: Support,
+        href: "/help-center",
       },
     ],
   },
