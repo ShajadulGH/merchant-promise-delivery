@@ -78,7 +78,7 @@ const notices = [
 
 const NoticeItem = ({ notice, isOpen, onClick }) => {
   return (
-    <div className="border-b border-gray-200 p-4 w-full bg-white">
+    <div className="border-b border-gray-200 p-4 w-full bg-white shadow-sm ">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={onClick}
@@ -111,7 +111,7 @@ const NoticeItem = ({ notice, isOpen, onClick }) => {
         </svg>
       </div>
       {isOpen && (
-        <div className="mt-2 text-gray-600 whitespace-pre-line">
+        <div className="mt-5 text-gray-600 whitespace-pre-line">
           <p>{notice.details}</p>
         </div>
       )}
@@ -132,7 +132,7 @@ const NoticePage = () => {
         <h1 className="text-2xl font-bold text-center mb-6">
           নোটিস বোর্ড / Notice Board
         </h1>
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col space-y-2">
           {notices.map((notice) => (
             <NoticeItem
               key={notice.id}
