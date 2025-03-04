@@ -31,7 +31,7 @@ const ParcelInfo = () => {
                 <span className="font-semibold ">Invoice: </span>240625EKR0O4E
               </p>
               <p className="text-gray-600">
-                <span className="font-semibold">Date: </span>
+                <span className="font-semibold">Create Date: </span>
                 6/26/2024
               </p>
             </div>
@@ -142,7 +142,35 @@ const ParcelInfo = () => {
               <div className="space-y-2">
                 <p className="flex justify-between">
                   <span className="font-semibold text-gray-600">
+                    Service Type:
+                  </span>
+                  <span className="text-gray-800">Electronics</span>
+                </p>
+                <p className="flex justify-between">
+                  <span className="font-semibold text-gray-600">
+                    Item Type:
+                  </span>
+                  <span className="text-gray-800">Electronics</span>
+                </p>
+                <p className="flex justify-between">
+                  <span className="font-semibold text-gray-600">Weight:</span>
+                  <span className="text-gray-800">10kg</span>
+                </p>
+                <p className="flex justify-between">
+                  <span className="font-semibold text-gray-600">
+                    Quantity:5
+                  </span>
+                  <span className="text-gray-800">Electronics</span>
+                </p>
+                <p className="flex justify-between">
+                  <span className="font-semibold text-gray-600">
                     Product Type:
+                  </span>
+                  <span className="text-gray-800">Electronics</span>
+                </p>
+                <p className="flex justify-between">
+                  <span className="font-semibold text-gray-600">
+                    Product Details:
                   </span>
                   <span className="text-gray-800">Electronics</span>
                 </p>
@@ -152,16 +180,17 @@ const ParcelInfo = () => {
                 </p>
                 <p className="flex justify-between">
                   <span className="font-semibold text-gray-600">
-                    Amount to Collect:
+                    Product Value
                   </span>
                   <span className="text-gray-800">৳ 1200.00</span>
                 </p>
                 <p className="flex justify-between">
                   <span className="font-semibold text-gray-600">
-                    Product Description:
+                    Amount to Collect:
                   </span>
-                  <span className="text-gray-800">Smartphone</span>
+                  <span className="text-gray-800">৳ 1200.00</span>
                 </p>
+
                 <p className="flex justify-between">
                   <span className="font-semibold text-gray-600">
                     Product Instruction:
