@@ -15,6 +15,7 @@ import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import { SiteLogo } from "@/components/svg";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import Image from "next/image";
 const schema = z.object({
   password: z
     .string()
@@ -53,7 +54,7 @@ const CreatePasswordForm = () => {
   return (
     <div className="w-full">
       <Link href="/dashboard" className="inline-block">
-        <SiteLogo className="h-10 w-10 2xl:w-14 2xl:h-14 text-primary" />
+        <Image src="/Asset 1RP Logo.png" width="150" height="150" />
       </Link>
       <div className="2xl:mt-8 mt-6 2xl:text-3xl lg:text-2xl text-xl font-bold text-default-900">
         Create New Password

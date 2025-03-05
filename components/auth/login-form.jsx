@@ -3,19 +3,14 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-// import { Loader2 } from "lucide-react";
-// import toast from "react-hot-toast";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { SiteLogo } from "@/components/svg";
 import { Icon } from "@iconify/react";
 import { Checkbox } from "@/components/ui/checkbox";
-
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 const LogInForm = () => {
-  // const [isPending, startTransition] = React.useTransition();
   const [passwordType, setPasswordType] = React.useState("password");
   const isDesktop2xl = useMediaQuery("(max-width: 1530px)");
   const router = useRouter();
@@ -48,19 +43,12 @@ const LogInForm = () => {
             Email{" "}
           </Label>
           <Input
-            // disabled={isPending}
             name="email"
             type="email"
             id="email"
-            className={cn("", {
-              // "border-destructive": errors.email,
-            })}
             size={!isDesktop2xl ? "xl" : "lg"}
           />
         </div>
-        {/* {errors.email && (
-          <div className=" text-destructive mt-2">{errors.email.message}</div>
-        )} */}
 
         <div className="mt-3.5">
           <Label
@@ -71,7 +59,6 @@ const LogInForm = () => {
           </Label>
           <div className="relative">
             <Input
-              // disabled={isPending}
               name="password"
               type={passwordType}
               id="password"
@@ -98,12 +85,6 @@ const LogInForm = () => {
             </div>
           </div>
         </div>
-        {/* {errors.password && (
-          <div className=" text-destructive mt-2">
-            {errors.password.message}
-          </div>
-        )} */}
-
         <div className="mt-5  mb-8 flex flex-wrap gap-2">
           <div className="flex-1 flex  items-center gap-1.5 ">
             <Checkbox
@@ -118,17 +99,14 @@ const LogInForm = () => {
               Remember me
             </Label>
           </div>
-          <Link href="/auth/forgot" className="flex-none text-sm text-primary">
+          <Link
+            href="/auth/reset-password"
+            className="flex-none text-sm text-primary"
+          >
             Forget Password?
           </Link>
         </div>
-        <Button
-          className="w-full"
-          // disabled={isPending}
-          size={!isDesktop2xl ? "lg" : "md"}
-        >
-          {/* {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          {isPending ? "Loading..." : "Sign In"} */}
+        <Button className="w-full" size={!isDesktop2xl ? "lg" : "md"}>
           Sign In
         </Button>
       </form>

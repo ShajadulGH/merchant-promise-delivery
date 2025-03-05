@@ -4,14 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-// import { Loader2 } from "lucide-react";
-// import toast from "react-hot-toast";
+
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { SiteLogo } from "@/components/svg";
 import { Icon } from "@iconify/react";
-import { Checkbox } from "@/components/ui/checkbox";
-
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -23,7 +19,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 const LogInForm = () => {
-  // const [isPending, startTransition] = React.useTransition();
   const [passwordType, setPasswordType] = React.useState("password");
   const isDesktop2xl = useMediaQuery("(max-width: 1530px)");
   const router = useRouter();
@@ -56,13 +51,10 @@ const LogInForm = () => {
             Company Name{" "}
           </Label>
           <Input
-            // disabled={isPending}
             name="email"
             type="email"
             id="email"
-            className={cn("", {
-              // "border-destructive": errors.email,
-            })}
+            className={cn("", {})}
             size={!isDesktop2xl ? "lg" : "md"}
           />
         </div>
@@ -71,13 +63,10 @@ const LogInForm = () => {
             Name{" "}
           </Label>
           <Input
-            // disabled={isPending}
             name="email"
             type="email"
             id="email"
-            className={cn("", {
-              // "border-destructive": errors.email,
-            })}
+            className={cn("", {})}
             size={!isDesktop2xl ? "lg" : "md"}
           />
         </div>
@@ -134,13 +123,10 @@ const LogInForm = () => {
             Contact Number{" "}
           </Label>
           <Input
-            // disabled={isPending}
             name="email"
             type="email"
             id="email"
-            className={cn("", {
-              // "border-destructive": errors.email,
-            })}
+            className={cn("", {})}
             size={!isDesktop2xl ? "lg" : "md"}
           />
         </div>
@@ -149,13 +135,10 @@ const LogInForm = () => {
             Email{" "}
           </Label>
           <Input
-            // disabled={isPending}
             name="email"
             type="email"
             id="email"
-            className={cn("", {
-              // "border-destructive": errors.email,
-            })}
+            className={cn("", {})}
             size={!isDesktop2xl ? "lg" : "md"}
           />
         </div>
@@ -169,7 +152,6 @@ const LogInForm = () => {
           </Label>
           <div className="relative">
             <Input
-              // disabled={isPending}
               name="password"
               type={passwordType}
               id="password"
@@ -197,13 +179,7 @@ const LogInForm = () => {
           </div>
         </div>
 
-        <Button
-          className="w-full"
-          // disabled={isPending}
-          size={!isDesktop2xl ? "lg" : "md"}
-        >
-          {/* {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          {isPending ? "Loading..." : "Sign In"} */}
+        <Button className="w-full" size={!isDesktop2xl ? "lg" : "md"}>
           Sign In
         </Button>
       </form>
