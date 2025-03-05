@@ -8,32 +8,31 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
-
 export const columns = [
-  {
-    id: "id",
-    header: ({ table }) => (
-      <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
-        }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-        className="translate-y-[2px]"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-        className="translate-y-[2px]"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
+  // {
+  //   id: "id",
+  //   header: ({ table }) => (
+  //     <Checkbox
+  //       checked={
+  //         table.getIsAllPageRowsSelected() ||
+  //         (table.getIsSomePageRowsSelected() && "indeterminate")
+  //       }
+  //       onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+  //       aria-label="Select all"
+  //       className="translate-y-[2px]"
+  //     />
+  //   ),
+  //   cell: ({ row }) => (
+  //     <Checkbox
+  //       checked={row.getIsSelected()}
+  //       onCheckedChange={(value) => row.toggleSelected(!!value)}
+  //       aria-label="Select row"
+  //       className="translate-y-[2px]"
+  //     />
+  //   ),
+  //   enableSorting: false,
+  //   enableHiding: false,
+  // },
   {
     accessorKey: "id",
     header: ({ column }) => (
@@ -53,8 +52,14 @@ export const columns = [
           <AvatarFallback>AB</AvatarFallback>
         </Avatar>
         <div className="flex flex-col">
-          <span className=" text-sm font-medium text-default-600 whitespace-nowrap"> {row?.original?.customer.name} </span>
-          <span className=" text-xs text-default-500 whitespace-nowrap"> {row?.original?.customer.email} </span>
+          <span className=" text-sm font-medium text-default-600 whitespace-nowrap">
+            {" "}
+            {row?.original?.customer.name}{" "}
+          </span>
+          <span className=" text-xs text-default-500 whitespace-nowrap">
+            {" "}
+            {row?.original?.customer.email}{" "}
+          </span>
         </div>
       </div>
     ),
@@ -69,9 +74,7 @@ export const columns = [
   {
     accessorKey: "amount",
     header: "Total",
-    cell: ({ row }) => (
-      <span>${row.getValue("amount")}</span>
-    ),
+    cell: ({ row }) => <span>${row.getValue("amount")}</span>,
   },
   {
     accessorKey: "status",
@@ -80,7 +83,13 @@ export const columns = [
       <Badge
         className="rounded capitalize whitespace-nowrap"
         variant="soft"
-        color={row.getValue("status") === "confirmed" ? "success" : row.getValue("status") === "closed" ? "warning" : ""}
+        color={
+          row.getValue("status") === "confirmed"
+            ? "success"
+            : row.getValue("status") === "closed"
+            ? "warning"
+            : ""
+        }
       >
         {row.getValue("status")}
       </Badge>
@@ -93,7 +102,13 @@ export const columns = [
       <Badge
         className="capitalize whitespace-nowrap"
         variant="soft"
-        color={row.getValue("paymentStatus") === "paid" ? "success" : row.getValue("paymentStatus") === "pending" ? "warning" : ""}
+        color={
+          row.getValue("paymentStatus") === "paid"
+            ? "success"
+            : row.getValue("paymentStatus") === "pending"
+            ? "warning"
+            : ""
+        }
       >
         {row.getValue("paymentStatus")}
       </Badge>
@@ -128,6 +143,4 @@ export const columns = [
       </div>
     ),
   },
-
-
 ];
