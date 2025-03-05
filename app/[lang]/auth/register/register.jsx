@@ -209,7 +209,7 @@ const LogInForm = () => {
       </form>
       <div className="mt-2 2xl:mt-4 text-center text-base text-default-600">
         Have an Account?{" "}
-        <Link href="/auth/register" className="text-primary">
+        <Link href="/" className="text-primary">
           {" "}
           Log in{" "}
         </Link>
