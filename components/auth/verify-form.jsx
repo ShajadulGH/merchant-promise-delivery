@@ -25,7 +25,7 @@ const VerfiyForm = () => {
   };
   const handleKeyDown = (index, event) => {
     if (event.key === "Backspace" && otp[index] === "" && index > 0) {
-      setOtp(prevOtp => {
+      setOtp((prevOtp) => {
         const newOtp = [...prevOtp];
         newOtp[index - 1] = "";
         return newOtp;
