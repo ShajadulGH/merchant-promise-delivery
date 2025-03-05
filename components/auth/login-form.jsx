@@ -134,7 +134,7 @@ const LogInForm = () => {
       </form>
       <div className="mt-6 xl:mt-8 flex flex-wrap justify-center gap-4"></div>
       <div className="mt-5 2xl:mt-8 text-center text-base text-default-600">
-        Don't have an account?{" "}
+        Become a Merchant.{" "}
         <Link href="/auth/register" className="text-primary">
           {" "}
           Sign Up{" "}
