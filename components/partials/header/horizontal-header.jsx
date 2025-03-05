@@ -10,7 +10,7 @@ const horizontalHeader = ({ handleOpenSearch }) => {
           href="/dashboard"
           className=" text-primary flex items-center gap-2"
         >
-          <span className=" text-xl font-semibold">
+          <span className=" text-xl font-semibold ">
             <Image src="/Asset 1RP Logo.png" width="150" height="150" />
           </span>
         </Link>

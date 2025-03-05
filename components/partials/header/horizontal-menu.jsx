@@ -26,7 +26,7 @@ export default function MainMenu({ trans }) {
   };
 
   return (
-    <div>
+    <div className="flex justify-center items-center">
       <NavigationMenu.Root
         onValueChange={setValue}
         className=" flex relative  justify-start group "
