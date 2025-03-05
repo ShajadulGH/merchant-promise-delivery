@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useRef, useState } from "react";
-import { SiteLogo } from "../svg";
 import Link from "next/link";
 import Image from "next/image";
 

@@ -12,17 +12,15 @@ import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import { Checkbox } from "@/components/ui/checkbox";
-import { SiteLogo } from "@/components/svg";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
 const schema = z.object({
   password: z
     .string()
-    .min(4, { message: "Your password must be at least 4 characters." }),
+    .min(8, { message: "Your password must be at least 8 characters." }),
   confirmPassword: z
     .string()
-    .min(4, { message: "Your password must be at least 4 characters." }),
+    .min(8, { message: "Your password must be at least 8 characters." }),
 });
 const CreatePasswordForm = () => {
   const [isPending, startTransition] = React.useTransition();
