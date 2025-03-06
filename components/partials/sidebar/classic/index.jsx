@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import SingleMenuItem from "./single-menu-item";
 import SubMenuHandler from "./sub-menu-handler";
 import NestedSubMenu from "../common/nested-menus";
+import Link from "next/link";
 const ClassicSidebar = ({ trans }) => {
   const { sidebarBg } = useSidebar();
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -81,8 +82,9 @@ const ClassicSidebar = ({ trans }) => {
           style={{ backgroundImage: `url(${sidebarBg})` }}
         ></div>
       )}
-
-      <SidebarLogo hovered={hovered} />
+      <Link href="/dashboard">
+        <SidebarLogo hovered={hovered} />
+      </Link>
 
       <ScrollArea
         className={cn("sidebar-menu  h-[calc(100%-80px)] ", {

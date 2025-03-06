@@ -2,6 +2,7 @@
 import { useSidebar } from "@/store";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const SidebarLogo = ({ hovered }) => {
   const { sidebarType, setCollapsed, collapsed } = useSidebar();
@@ -9,9 +10,11 @@ const SidebarLogo = ({ hovered }) => {
     <div className="px-4 py-4 ">
       <div className=" flex items-center">
         {/* <div className="flex  items-center"> */}
-        <div className="flex-1  text-xl text-primary  font-semibold">
-          <Image src="/Asset 1RP Logo.png" width="125" height="125" />
-        </div>
+        <Link href="/dashboard">
+          <div className="flex-1  text-xl text-primary  font-semibold">
+            <Image src="/Asset 1RP Logo.png" width="125" height="125" />
+          </div>
+        </Link>
         {/* </div> */}
         {sidebarType === "classic" && (!collapsed || hovered) && (
           <div className="flex-none lg:block hidden">

@@ -54,7 +54,7 @@ const Settings = () => {
               {/* <AdvancedTable /> */}
             </TabsContent>
             <TabsContent value="delivered" className="mt-0">
-              {/* <AdvancedTable /> */}
+              <AdvancedTable />
             </TabsContent>
             <TabsContent value="returned" className="mt-0">
               {/* <AdvancedTable /> */}

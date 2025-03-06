@@ -219,10 +219,6 @@
   border-right: 0px !important;
   padding-right: 0px !important;
 }
-
-[dir="rtl"] {
-}
-
 .ck {
   .ck-editor__editable {
     min-height: 245px !important;
@@ -243,12 +239,10 @@
   from {
     height: 0;
   }
-
   to {
     height: var(--radix-collapsible-content-height);
   }
 }
-
 @keyframes slideUp {
   from {
     height: var(--radix-collapsible-content-height);
