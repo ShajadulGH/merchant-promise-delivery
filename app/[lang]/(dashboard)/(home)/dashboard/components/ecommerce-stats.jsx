@@ -37,7 +37,7 @@ const EcommerceStats = () => {
         <div
           key={`reports-state-${index}`}
           className={cn(
-            "flex flex-col gap-1.5 p-4 rounded-sm overflow-hidden bg-primary/10  items-start relative before:absolute before:left-1/2 before:-translate-x-1/2 before:bottom-1 before:h-[2px] before:w-9 before:bg-primary/50 dark:before:bg-primary-foreground before:hidden ",
+            "flex flex-col gap-1.5 p-4 rounded-sm overflow-hidden bg-primary/10  items-start relative before:absolute before:left-1/2 before:-translate-x-1/2 before:bottom-1 before:h-[2px] before:w-9 before:bg-primary/50 dark:before:bg-primary-foreground before:hidden shadow-lg",
             {
               "bg-primary/40  dark:bg-primary/70": item.color === "primary",
               "bg-orange-50 dark:bg-orange-500": item.color === "warning",

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import "moment/locale/bn";
+import { BreadcrumbItem, Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 const notices = [
   {
@@ -127,23 +128,29 @@ const NoticePage = () => {
   };
 
   return (
-    <div className="w-full p-4 bg-gray-50 min-h-screen mb-5">
-      <div className="w-full">
-        <h1 className="text-2xl font-bold text-center mb-6">
-          নোটিস বোর্ড / Notice Board
-        </h1>
-        <div className="w-full flex flex-col space-y-2">
-          {notices.map((notice) => (
-            <NoticeItem
-              key={notice.id}
-              notice={notice}
-              isOpen={openNoticeId === notice.id}
-              onClick={() => handleNoticeClick(notice.id)}
-            />
-          ))}
+    <>
+      <Breadcrumbs>
+        <BreadcrumbItem>Notice</BreadcrumbItem>
+        <BreadcrumbItem>Notice List</BreadcrumbItem>
+      </Breadcrumbs>
+      <div className="w-full p-4 bg-gray-50 min-h-screen mb-5 mt-5">
+        <div className="w-full">
+          <h1 className="text-2xl font-bold text-center mb-6">
+            নোটিস বোর্ড / Notice Board
+          </h1>
+          <div className="w-full flex flex-col space-y-2">
+            {notices.map((notice) => (
+              <NoticeItem
+                key={notice.id}
+                notice={notice}
+                isOpen={openNoticeId === notice.id}
+                onClick={() => handleNoticeClick(notice.id)}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { BreadcrumbItem, Breadcrumbs } from "@/components/ui/breadcrumbs";
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
 
@@ -117,58 +118,65 @@ const VideoListPage = () => {
   );
 
   return (
-    <div className="p-4 flex flex-col">
-      <h1 className="text-2xl font-bold mb-4 text-gray-900">
-        Guideline For Merchants
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {videos.map(renderVideoCard)}
-      </div>
+    <>
+      <Breadcrumbs>
+        <BreadcrumbItem>Help Center</BreadcrumbItem>
+        <BreadcrumbItem>Videos</BreadcrumbItem>
+      </Breadcrumbs>
 
-      <h1 className="text-2xl font-bold mb-4 text-gray-900 mt-5">
-        Merchant Support
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {merchantSupport.map(renderVideoCard)}
-      </div>
+      <div className="p-4 flex flex-col mt-5">
+        <h1 className="text-2xl font-bold mb-4 text-gray-900">
+          Guideline For Merchants
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {videos.map(renderVideoCard)}
+        </div>
 
-      {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
-          <div className="bg-white rounded-lg overflow-hidden w-full max-w-4xl relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 bg-red-600 text-white rounded-full p-2 hover:bg-red-700 transition"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+        <h1 className="text-2xl font-bold mb-4 text-gray-900 mt-5">
+          Merchant Support
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {merchantSupport.map(renderVideoCard)}
+        </div>
+
+        {isModalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
+            <div className="bg-white rounded-lg overflow-hidden w-full max-w-4xl relative">
+              <button
+                onClick={closeModal}
+                className="absolute top-2 right-2 bg-red-600 text-white rounded-full p-2 hover:bg-red-700 transition"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+              <div className="aspect-video">
+                <ReactPlayer
+                  url={selectedVideo.url}
+                  controls
+                  width="100%"
+                  height="100%"
                 />
-              </svg>
-            </button>
-            <div className="aspect-video">
-              <ReactPlayer
-                url={selectedVideo.url}
-                controls
-                width="100%"
-                height="100%"
-              />
-            </div>
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{selectedVideo.title}</h2>
+              </div>
+              <div className="p-4">
+                <h2 className="text-xl font-semibold">{selectedVideo.title}</h2>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 
