@@ -8,14 +8,13 @@ import MenuLabel from "../common/menu-label";
 import SingleMenuItem from "./single-menu-item";
 import SubMenuHandler from "./sub-menu-handler";
 import NestedSubMenu from "../common/nested-menus";
-import { useSidebar, useThemeStore } from "@/store";
+import { useSidebar } from "@/store";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePathname } from "next/navigation";
 
 const PopoverSidebar = ({ trans }) => {
-  const { collapsed, sidebarBg } = useSidebar();
-  const { layout, isRtl } = useThemeStore();
+  const { collapsed } = useSidebar();
   const menus = menusConfig?.sidebarNav?.classic || [];
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [activeMultiMenu, setMultiMenu] = useState(null);
@@ -67,19 +66,14 @@ const PopoverSidebar = ({ trans }) => {
 
   return (
     <div
-      className={cn("fixed  top-0  border-r  ", {
-        "w-[248px]": !collapsed,
-        "w-[72px]": collapsed,
-        "m-6 bottom-0   bg-card rounded-md": layout === "semibox",
-        "h-full   bg-card ": layout !== "semibox",
-      })}
-    >
-      {sidebarBg !== "none" && (
-        <div
-          className=" absolute left-0 top-0   z-[-1] w-full h-full bg-cover bg-center opacity-[0.07]"
-          style={{ backgroundImage: `url(${sidebarBg})` }}
-        ></div>
+      className={cn(
+        "fixed  top-0  border-r m-6 bottom-0   bg-card rounded-md",
+        {
+          "w-[248px]": !collapsed,
+          "w-[72px]": collapsed,
+        }
       )}
+    >
       <SidebarLogo collapsed={collapsed} />
       <Separator />
       <ScrollArea
@@ -88,7 +82,6 @@ const PopoverSidebar = ({ trans }) => {
         })}
       >
         <ul
-          dir={isRtl ? "rtl" : "ltr"}
           className={cn(" space-y-1", {
             " space-y-2 text-center": collapsed,
           })}

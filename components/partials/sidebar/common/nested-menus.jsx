@@ -1,10 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
 import MultiMenuHandler from "./multi-menu-handler";
 import MultiNestedMenu from "./multi-nested-menu";
 import SubMenuItem from "./sub-menu-item";

@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
 import { cn, isLocationMatch, translate, getDynamicPath } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import Link from "next/link";

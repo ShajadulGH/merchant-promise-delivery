@@ -1,12 +1,10 @@
 import React from "react";
-import { useSidebar, useThemeStore } from "@/store";
+import { useSidebar } from "@/store";
 import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
 import Image from "next/image";
-
 import Link from "next/link";
 import { useMediaQuery } from "@/hooks/use-media-query";
-
 const MenuBar = ({ collapsed, setCollapsed }) => {
   return (
     <button
@@ -53,15 +51,12 @@ const MenuBar = ({ collapsed, setCollapsed }) => {
     </button>
   );
 };
-
 const VerticalHeader = ({ handleOpenSearch }) => {
-  const { collapsed, setCollapsed, subMenu, sidebarType } = useSidebar();
-  const { layout } = useThemeStore();
+  const { collapsed, setCollapsed } = useSidebar();
   const isDesktop = useMediaQuery("(min-width: 1280px)");
   const isMobile = useMediaQuery("(min-width: 768px)");
   let LogoContent = null;
   let menuBarContent = null;
-  let searchButtonContent = null;
 
   const MainLogo = (
     <Link href="/dashboard" className=" text-primary ">
@@ -81,50 +76,21 @@ const VerticalHeader = ({ handleOpenSearch }) => {
       </button>
     </div>
   );
-  if (layout === "semibox" && !isDesktop) {
+  if (!isDesktop) {
     LogoContent = MainLogo;
   }
-  if (
-    layout === "vertical" &&
-    !isDesktop &&
-    isMobile &&
-    sidebarType === "module"
-  ) {
-    LogoContent = MainLogo;
-  }
-  if (layout === "vertical" && !isDesktop && sidebarType !== "module") {
-    LogoContent = MainLogo;
-  }
-
   // menu bar content condition
-  if (isDesktop && sidebarType !== "module") {
+  if (isDesktop) {
     menuBarContent = (
       <MenuBar collapsed={collapsed} setCollapsed={setCollapsed} />
     );
-  }
-  if (sidebarType === "module") {
-    menuBarContent = (
-      <MenuBar collapsed={collapsed} setCollapsed={setCollapsed} />
-    );
-  }
-  if (sidebarType === "classic") {
-    menuBarContent = null;
-  }
-  if (subMenu && isDesktop) {
-    menuBarContent = null;
-  }
-  if (sidebarType === "module" && isMobile) {
-    searchButtonContent = SearchButton;
-  }
-  if (sidebarType === "classic" || sidebarType === "popover") {
-    searchButtonContent = SearchButton;
   }
   return (
     <>
       <div className="flex items-center md:gap-6 gap-3">
         {LogoContent}
         {menuBarContent}
-        {searchButtonContent}
+        {SearchButton}
       </div>
     </>
   );
