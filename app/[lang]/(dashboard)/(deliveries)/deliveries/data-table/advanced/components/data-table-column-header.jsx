@@ -1,9 +1,4 @@
-import {
-  ChevronDown,
-  ChevronUp,
-  XCircle,
-  Eye,
-} from "lucide-react";
+import { ChevronDown, ChevronUp, XCircle, Eye } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -19,7 +14,6 @@ export function DataTableColumnHeader({ column, title, className }) {
   if (!column.getCanSort()) {
     return <div className={cn(className)}>{title}</div>;
   }
-
   return (
     <div className={cn("flex items-center space-x-2", className)}>
       <DropdownMenu>
@@ -31,11 +25,11 @@ export function DataTableColumnHeader({ column, title, className }) {
           >
             <span>{title}</span>
             {column.getIsSorted() === "desc" ? (
-              <ChevronDown className="ltr:ml-2 rtl:mr-2 h-4 w-4" />
+              <ChevronDown className="ltr:ml-2 h-4 w-4" />
             ) : column.getIsSorted() === "asc" ? (
               <ChevronUp className="ltr:ml-2 rtl:mr-2 h-4 w-4" />
             ) : (
-              <XCircle className="ltr:ml-2 rtl:mr-2 h-4 w-4" />
+              <XCircle className="ltr:ml-2 h-4 w-4" />
             )}
           </Button>
         </DropdownMenuTrigger>

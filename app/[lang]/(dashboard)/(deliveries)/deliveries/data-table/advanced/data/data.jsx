@@ -1,21 +1,12 @@
-
-
-import { ChevronDown, ChevronRight, ChevronUp, CheckCircle2, XCircle, HelpCircle, Timer } from 'lucide-react';
-export const labels = [
-  {
-    value: "bug",
-    label: "Bug",
-  },
-  {
-    value: "feature",
-    label: "Feature",
-  },
-  {
-    value: "documentation",
-    label: "Documentation",
-  },
-]
-
+import {
+  ChevronDown,
+  ChevronRight,
+  ChevronUp,
+  CheckCircle2,
+  XCircle,
+  HelpCircle,
+  Timer,
+} from "lucide-react";
 export const statuses = [
   {
     value: "backlog",
@@ -42,7 +33,7 @@ export const statuses = [
     label: "Canceled",
     icon: XCircle,
   },
-]
+];
 
 export const priorities = [
   {
@@ -60,4 +51,4 @@ export const priorities = [
     value: "high",
     icon: ChevronUp,
   },
-]
+];
