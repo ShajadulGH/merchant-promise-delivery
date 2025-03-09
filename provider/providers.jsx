@@ -9,7 +9,7 @@ import { SonnToaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 const Providers = ({ children }) => {
   return (
-    <body className={cn("dash-tail-app ", inter.className)}>
+    <body className={cn("dash-tail-app ", inter.className, "theme-red")}>
       <ThemeProvider
         attribute="class"
         enableSystem={false}
