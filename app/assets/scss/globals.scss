@@ -74,59 +74,6 @@
     --nextra-primary-hue: 250deg;
   }
 
-  .dark {
-    --background: 222.2 47.4% 11.2%;
-    --foreground: 210 40% 98%;
-
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-
-    --popover: 222.2 47.4% 11.2%;
-    --popover-foreground: 210 40% 98%;
-
-    --card: 215 27.9% 16.9%;
-    --card-foreground: 210 40% 98%;
-
-    --border: 215.3 25% 26.7%;
-    --input: 215 27.9% 16.9%;
-
-    --primary: 254 86% 58%;
-
-    --secondary: 215.3 25% 26.7%;
-    --secondary-foreground: 210 40% 98%;
-
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 85.7% 97.3;
-
-    --ring: 263.4 70% 50.4%;
-
-    --success: 142.1 70.6% 45.3%;
-    --success-foreground: 138.5 76.5% 96.7%;
-
-    --info: 188.7 94.5% 42.7%;
-    --info-foreground: 183.2 100% 96.3%;
-
-    --warning: 24.6 95% 53.1%;
-    --warning-foreground: 33.3 100% 96.5%;
-
-    --border: 215.3 25% 26.7%;
-    --input: 217.2 32.6% 17.5%;
-
-    --default-950: 210 40% 98%;
-    --default-900: 210 40% 96.1%;
-    --default-800: 214.3 31.8% 91.4%;
-    --default-700: 212.7 26.8% 83.9%;
-    --default-600: 215 20.2% 65.1%;
-    --default-500: 215.4 16.3% 46.9%;
-    --default-300: 215.3 19.3% 34.5%;
-    --default-200: 215.3 25% 26.7%;
-    --default-100: 217.2 32.6% 17.5%;
-    --default-50: 222.2 47.4% 11.2%;
-  }
-
   * {
     @apply border-border;
   }
@@ -137,12 +84,6 @@
 
   body {
     @apply bg-[#EEF1F9] dark:bg-background text-foreground text-sm;
-  }
-
-  .avatarGroup {
-    > span {
-      @apply hover:-translate-y-1 hover:relative hover:z-10 transition-transform;
-    }
   }
 }
 
@@ -225,16 +166,6 @@
   }
 }
 
-// auth
-.loginwrapper {
-  min-height: calc(var(--vh, 1vh) * 100);
-  flex-basis: 100%;
-}
-
-.loginwrapper .lg-inner-column {
-  height: calc(var(--vh, 1vh) * 100);
-}
-
 @keyframes slideDown {
   from {
     height: 0;
@@ -278,39 +209,13 @@
   }
 }
 
-.page-min-height {
-  min-height: calc(var(--vh, 1vh) * 100 - 117px);
-}
-
 .page-min-height-semibox {
   min-height: calc(var(--vh, 1vh) * 100 - 200px);
-}
-
-.page-min-height-horizontal {
-  min-height: calc(var(--vh, 1vh) * 100 - 170px);
-}
-
-.app-height {
-  height: calc(var(--vh, 1vh) * 100 - 11.1rem) !important;
-}
-
-@media (max-width: 768px) {
-  .app-height {
-    height: calc(var(--vh, 1vh) * 100 - 10.5rem) !important;
-  }
 }
 
 @media (min-width: 1280px) {
   .semibox-content-wrapper {
     margin-left: 56px;
     margin-right: 56px;
-  }
-}
-.layout-padding {
-  padding-bottom: 112px;
-}
-@media (min-width: 768px) {
-  .layout-padding {
-    padding-bottom: 37px;
   }
 }

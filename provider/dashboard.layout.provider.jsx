@@ -28,8 +28,8 @@ const DashBoardLayoutProvider = ({ children, trans }) => {
 
       <div
         className={cn("content-wrapper transition-all duration-150 ", {
-          "ltr:xl:ml-[72px] rtl:xl:mr-[72px]": collapsed,
-          "ltr:xl:ml-[272px] rtl:xl:mr-[272px]": !collapsed,
+          "ltr:xl:ml-[72px] ": collapsed,
+          "ltr:xl:ml-[272px] ": !collapsed,
         })}
       >
         <div
