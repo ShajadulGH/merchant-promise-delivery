@@ -1,54 +1,33 @@
-import {
-  ChevronDown,
-  ChevronRight,
-  ChevronUp,
-  CheckCircle2,
-  XCircle,
-  HelpCircle,
-  Timer,
-} from "lucide-react";
+import { CheckCircle2, XCircle, HelpCircle } from "lucide-react";
 export const statuses = [
   {
-    value: "backlog",
-    label: "Backlog",
+    value: "delivered",
+    label: "Delivered",
+    icon: CheckCircle2,
+  },
+  {
+    value: "partial delivered",
+    label: "Parcial Delivered",
     icon: HelpCircle,
-  },
-  {
-    value: "todo",
-    label: "Todo",
-    icon: CheckCircle2,
-  },
-  {
-    value: "in progress",
-    label: "In Progress",
-    icon: Timer,
-  },
-  {
-    value: "done",
-    label: "Done",
-    icon: CheckCircle2,
   },
   {
     value: "canceled",
     label: "Canceled",
     icon: XCircle,
   },
-];
-
-export const priorities = [
   {
-    label: "Low",
-    value: "low",
-    icon: ChevronDown,
+    value: "paid",
+    label: "Paid",
+    icon: CheckCircle2,
   },
   {
-    label: "Medium",
-    value: "medium",
-    icon: ChevronRight,
+    value: "partial return",
+    label: "Parcial Return",
+    icon: HelpCircle,
   },
   {
-    label: "High",
-    value: "high",
-    icon: ChevronUp,
+    value: "returned",
+    label: "Returned",
+    icon: XCircle,
   },
 ];

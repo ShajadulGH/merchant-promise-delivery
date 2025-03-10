@@ -96,7 +96,12 @@ export function DataTableToolbar({ table }) {
         placeholder="Search Anything..."
         value={table.getState().globalFilter ?? ""}
         onChange={(event) => table.setGlobalFilter(event.target.value)}
-        className="h-8 min-w-[200px] max-w-sm"
+        className="h-8 min-w-[200px] max-w-sm border-red-500 placeholder:text-red-500 font-bold"
+      />
+      {/* Replace React Suite DateRangePicker with Ant Design RangePicker */}
+      <RangePicker
+        onChange={handleDateChange}
+        className="h-8 border-red-500 text-red-500 "
       />
 
       {table.getColumn("status") && (
@@ -106,17 +111,6 @@ export function DataTableToolbar({ table }) {
           options={statuses}
         />
       )}
-      {table.getColumn("priority") && (
-        <DataTableFacetedFilter
-          column={table.getColumn("priority")}
-          title="Store"
-          options={priorities}
-        />
-      )}
-
-      {/* Replace React Suite DateRangePicker with Ant Design RangePicker */}
-      <RangePicker onChange={handleDateChange} className="h-8" />
-
       {isFiltered && (
         <Button
           variant="outline"

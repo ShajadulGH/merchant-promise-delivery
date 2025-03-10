@@ -3,40 +3,145 @@
 import { Badge } from "@/components/ui/badge";
 import { labels, priorities, statuses } from "../data/data";
 import { DataTableColumnHeader } from "./data-table-column-header";
+import { Icon } from "@iconify/react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const columns = [
   {
     accessorKey: "sl",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="SL" />
-    ),
-    cell: ({ row }) => <div className="w-[20px]">{row.getValue("sl")}</div>,
+
+    cell: ({ row }) => <div className="min-w-[20px]">{row.getValue("sl")}</div>,
     enableSorting: false,
     enableHiding: false,
   },
   {
     accessorKey: "invoice",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Invoice" />
-    ),
-    cell: ({ row }) => (
-      <div className="w-[80px]">{row.getValue("invoice")}</div>
-    ),
-    enableSorting: false,
-    enableHiding: false,
+    cell: ({ row }) => {
+      const invoice = row.getValue("invoice");
+      const status = statuses.find(
+        (status) => status.value === invoice.status.toLowerCase()
+      );
+
+      return (
+        <div className="flex flex-col space-y-1 min-w-[80px]">
+          <div className="text-sm">{invoice.id}</div>
+          <div className="flex items-center">
+            {status?.icon && (
+              <status.icon className="ltr:mr-2 rtl:ml-2 h-4 w-4 text-muted-foreground" />
+            )}
+            <Badge
+              className="p-1.5 rounded-md"
+              variant="soft"
+              color={
+                (status?.label === "Delivered" && "success") ||
+                (status?.label === "Canceled" && "destructive") ||
+                (status?.label === "Parcial Delivered" && "warning") ||
+                (status?.label === "Paid" && "success") ||
+                (status?.label === "Parcial Return" && "warning") ||
+                (status?.label === "Returned" && "destructive")
+              }
+            >
+              {status?.label}
+            </Badge>
+          </div>
+          <div className="text-sm">{invoice.date}</div>
+        </div>
+      );
+    },
+    enableSorting: true,
+    enableHiding: true,
   },
+
   {
     accessorKey: "parcel",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Parcel" />
-    ),
-    cell: ({ row }) => <div className="w-[100%]">{row.getValue("parcel")}</div>,
+
+    cell: ({ row }) => {
+      const parcel = row.getValue("parcel");
+
+      return (
+        <div className="flex flex-col space-y-1 min-w-[200px]">
+          <div className="text-sm">
+            <span className="font-semibold">Company Name:</span>{" "}
+            {parcel.companyName}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Store Name:</span>{" "}
+            {parcel.storeName}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Merchant Order ID:</span>{" "}
+            {parcel.merchantOrderId}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Service Type:</span>{" "}
+            {parcel.serviceType}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Delivery Type:</span>{" "}
+            {parcel.deliveryType}
+          </div>
+        </div>
+      );
+    },
+    enableSorting: true,
+    enableHiding: true,
+  },
+  {
+    accessorKey: "customer",
+
+    cell: ({ row }) => {
+      const customer = row.getValue("customer");
+
+      return (
+        <div className="flex flex-col space-y-1 min-w-[200px]">
+          <div className="text-sm">
+            <span className="font-semibold">Name:</span> {customer.name}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Number:</span> {customer.number}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Address:</span> {customer.address}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">District:</span> {customer.district}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Area:</span> {customer.area}
+          </div>
+        </div>
+      );
+    },
+    enableSorting: true,
+    enableHiding: true,
+  },
+  {
+    accessorKey: "amount",
+
+    cell: ({ row }) => {
+      const amount = row.getValue("amount");
+
+      return (
+        <div className="flex flex-col space-y-1 min-w-[150px]">
+          <div className="text-sm">
+            <span className="font-semibold">COD:</span> {amount.cod}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Collected:</span> {amount.collected}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Total Charge:</span>{" "}
+            {amount.totalCharge}
+          </div>
+        </div>
+      );
+    },
+    enableSorting: true,
+    enableHiding: true,
   },
   {
     accessorKey: "status",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
-    ),
     cell: ({ row }) => {
       const status = statuses.find(
         (status) => status.value === row.getValue("status")
@@ -47,11 +152,21 @@ export const columns = [
       }
 
       return (
-        <div className="flex w-[100px] items-center">
+        <div className="flex items-center">
           {status.icon && (
             <status.icon className="ltr:mr-2 rtl:ml-2 h-4 w-4 text-muted-foreground" />
           )}
-          <span>{status.label}</span>
+          <Badge
+            className="p-1.5 rounded-md"
+            variant="soft"
+            color={
+              (status.label === "Delivered" && "success") ||
+              (status.label === "Canceled" && "destructive") ||
+              (status.label === "Parcial Delivered" && "warning")
+            }
+          >
+            {status.label}
+          </Badge>
         </div>
       );
     },
@@ -60,40 +175,73 @@ export const columns = [
     },
   },
   {
-    accessorKey: "priority",
-
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Priority" />
-    ),
-
+    accessorKey: "paymentReturnStatus",
+    header: "Payment/Return Status",
     cell: ({ row }) => {
-      const priority = priorities.find(
-        (priority) => priority.value === row.getValue("priority")
+      const paymentReturnStatus = row.getValue("paymentReturnStatus");
+      const status = statuses.find(
+        (status) => status.value === paymentReturnStatus.status.toLowerCase()
       );
 
-      if (!priority) {
-        return null;
-      }
-
       return (
-        <div className="flex items-center">
-          {priority.icon && (
-            <priority.icon className="ltr:mr-2 rtl:ml-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <Badge
-            color={
-              (priority.label === "High" && "destructive") ||
-              (priority.label === "Medium" && "info") ||
-              (priority.label === "Low" && "warning")
-            }
-          >
-            {priority.label}
-          </Badge>
+        <div className="flex flex-col space-y-1 min-w-[150px]">
+          <div className="flex items-center">
+            {status?.icon && (
+              <status.icon className="ltr:mr-2 rtl:ml-2 h-4 w-4 text-muted-foreground" />
+            )}
+            <Badge
+              className="p-1.5 rounded-md"
+              variant="soft"
+              color={
+                (status?.label === "Delivered" && "success") ||
+                (status?.label === "Canceled" && "destructive") ||
+                (status?.label === "Parcial Delivered" && "warning") ||
+                (status?.label === "Paid" && "success") ||
+                (status?.label === "Parcial Return" && "warning") ||
+                (status?.label === "Returned" && "destructive")
+              }
+            >
+              {status?.label}
+            </Badge>
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Code:</span>{" "}
+            {paymentReturnStatus.code}
+          </div>
+          <div className="text-sm">
+            <span className="font-semibold">Paid At:</span>{" "}
+            {paymentReturnStatus.paidAt}
+          </div>
         </div>
       );
     },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id));
+    enableSorting: true,
+    enableHiding: true,
+  },
+  {
+    accessorKey: "actions",
+    cell: () => {
+      return (
+        <div className="flex gap-3 items-center">
+          <Button
+            asChild
+            size="icon"
+            className="h-9 w-9 rounded bg-default-100 text-red-500 hover:text-primary-foreground"
+          >
+            <Link href="/parcel-info">
+              <Icon icon="heroicons:eye" className="w-5 h-5" />
+            </Link>
+          </Button>
+          <Button
+            size="icon"
+            className="h-9 w-9 rounded bg-default-100 text-red-500 hover:text-primary-foreground"
+          >
+            <Icon icon="heroicons:printer" className="w-5 h-5" />
+          </Button>
+        </div>
+      );
     },
+    enableSorting: false,
+    enableHiding: false,
   },
 ];

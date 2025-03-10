@@ -1,6 +1,6 @@
 import * as React from "react";
-
-import { Check, Plus } from "lucide-react";
+import { Check } from "lucide-react";
+import { PlusCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,11 +27,8 @@ export function DataTableFacetedFilter({ column, title, options }) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          className="border-default-300 text-default-600"
-        >
-          <Plus className="ltr:mr-2 rtl:ml-2 h-4 w-4" />
+        <Button variant="outline" size="sm" className="h-8">
+          <PlusCircle className="ltr:mr-2 rtl:ml-2 h-4 w-4" />
           {title}
           {selectedValues?.size > 0 && (
             <>
@@ -42,7 +39,7 @@ export function DataTableFacetedFilter({ column, title, options }) {
               >
                 {selectedValues.size}
               </Badge>
-              <div className="hidden space-x-1 lg:flex">
+              <div className="hidden space-x-1 rtl:space-x-reverse lg:flex">
                 {selectedValues.size > 2 ? (
                   <Badge
                     color="secondary"
@@ -93,7 +90,7 @@ export function DataTableFacetedFilter({ column, title, options }) {
                   >
                     <div
                       className={cn(
-                        "ltr:mr-2 rtl:ml-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
                         isSelected
                           ? "bg-primary text-primary-foreground"
                           : "opacity-50 [&_svg]:invisible"

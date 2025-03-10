@@ -1,17 +1,18 @@
-
-
-import { CheckCircle2, XCircle, } from 'lucide-react';
-
+import { CheckCircle2, XCircle, HelpCircle } from "lucide-react";
 export const statuses = [
   {
-    value: "confirmed",
-    label: "Confirmed",
+    value: "paid",
+    label: "Paid",
     icon: CheckCircle2,
   },
   {
-    value: "closed",
-    label: "Closed",
+    value: "partial return",
+    label: "Partial Return",
+    icon: HelpCircle,
+  },
+  {
+    value: "returned",
+    label: "Returned",
     icon: XCircle,
   },
-]
-
+];

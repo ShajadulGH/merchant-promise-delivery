@@ -24,10 +24,7 @@ const Settings = () => {
       label: "Partial Delivered",
       value: "partial delivered",
     },
-    {
-      label: "Returned",
-      value: "returned",
-    },
+
     {
       label: "Paid Return",
       value: "paid return",
@@ -35,6 +32,10 @@ const Settings = () => {
     {
       label: "Return Pending",
       value: "return pending",
+    },
+    {
+      label: "Returned",
+      value: "returned",
     },
   ];
   return (
@@ -73,13 +74,14 @@ const Settings = () => {
               <TabsContent value="partial delivered" className="mt-0">
                 <AdvancedTable />
               </TabsContent>
-              <TabsContent value="returned" className="mt-0">
-                {/* <AdvancedTable /> */}
-              </TabsContent>
+
               <TabsContent value="paid return" className="mt-0">
                 {/* <AdvancedTable /> */}
               </TabsContent>
               <TabsContent value="return pending" className="mt-0">
+                {/* <AdvancedTable /> */}
+              </TabsContent>
+              <TabsContent value="returned" className="mt-0">
                 {/* <AdvancedTable /> */}
               </TabsContent>
             </Tabs>
