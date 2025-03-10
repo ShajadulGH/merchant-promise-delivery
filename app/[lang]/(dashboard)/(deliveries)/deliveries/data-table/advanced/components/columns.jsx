@@ -45,7 +45,10 @@ export const columns = [
               {status?.label}
             </Badge>
           </div>
-          <div className="text-sm">{invoice.date}</div>
+          <div className="text-sm">
+            <span className="font-semibold">Date:</span>
+            {invoice.date}
+          </div>
         </div>
       );
     },
