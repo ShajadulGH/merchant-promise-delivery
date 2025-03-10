@@ -6,7 +6,7 @@ import { DataTableColumnHeader } from "./data-table-column-header";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
+import { toast as reToast } from "react-hot-toast";
 export const columns = [
   {
     accessorKey: "sl",
@@ -23,9 +23,25 @@ export const columns = [
         (status) => status.value === invoice.status.toLowerCase()
       );
 
+      // Function to copy the invoice ID to the clipboard
+      const handleCopyInvoiceId = () => {
+        navigator.clipboard.writeText(invoice.id).then(() => {
+          reToast.success("Copied!");
+        });
+      };
+
       return (
         <div className="flex flex-col space-y-1 min-w-[80px]">
-          <div className="text-sm">{invoice.id}</div>
+          <div className="text-sm flex items-center gap-2">
+            <span>{invoice.id}</span>
+            <button
+              onClick={handleCopyInvoiceId}
+              className="text-muted-foreground hover:text-primary"
+              title="Copy Invoice ID"
+            >
+              <Icon icon="heroicons:clipboard-document" className="w-4 h-4" />
+            </button>
+          </div>
           <div className="flex items-center">
             {status?.icon && (
               <status.icon className="ltr:mr-2 rtl:ml-2 h-4 w-4 text-muted-foreground" />
@@ -46,8 +62,7 @@ export const columns = [
             </Badge>
           </div>
           <div className="text-sm">
-            <span className="font-semibold">Date:</span>
-            {invoice.date}
+            <span className="font-semibold">Date:</span> {invoice.date}
           </div>
         </div>
       );
