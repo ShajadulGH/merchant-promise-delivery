@@ -174,17 +174,25 @@
   &:hover {
     border-color: red; // Ensure border stays red on hover
   }
+  &:focus {
+    border-color: red;
+  }
+  &:focus-within {
+    border-color: red;
+  }
 
   .ant-picker-input input::placeholder {
     color: red;
   }
-
   .ant-picker-suffix {
     color: red;
   }
 
   .ant-picker-separator {
     color: red;
+  }
+  .ant-picker-active-bar {
+    background-color: red;
   }
 }
 
