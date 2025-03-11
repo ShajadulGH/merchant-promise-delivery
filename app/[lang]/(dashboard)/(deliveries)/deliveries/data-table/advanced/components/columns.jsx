@@ -1,8 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { labels, priorities, statuses } from "../data/data";
-import { DataTableColumnHeader } from "./data-table-column-header";
+import { statuses } from "../data/data";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

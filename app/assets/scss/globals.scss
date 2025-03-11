@@ -165,6 +165,61 @@
     min-height: 245px !important;
   }
 }
+// Date range picker
+.custom-range-picker {
+  height: 32px;
+  border-color: red;
+  color: red;
+
+  &:hover {
+    border-color: red; // Ensure border stays red on hover
+  }
+
+  .ant-picker-input input::placeholder {
+    color: red;
+  }
+
+  .ant-picker-suffix {
+    color: red;
+  }
+
+  .ant-picker-separator {
+    color: red;
+  }
+}
+
+.ant-picker-cell-in-view {
+  &.ant-picker-cell-range-start .ant-picker-cell-inner,
+  &.ant-picker-cell-range-end .ant-picker-cell-inner {
+    background-color: red !important;
+  }
+
+  &.ant-picker-cell-today .ant-picker-cell-inner::before {
+    border-color: red !important;
+  }
+
+  &.ant-picker-cell-range-start:not(
+      .ant-picker-cell-range-start-single
+    )::before,
+  &.ant-picker-cell-in-range::before,
+  &.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
+    background: rgb(255, 202, 202) !important;
+  }
+}
+
+.ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
+  .ant-picker-time-panel-cell-inner {
+  background: rgb(255, 202, 202) !important;
+}
+
+@media (max-width: 640px) {
+  .ant-picker-panels {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 400px;
+  }
+}
 
 @keyframes slideDown {
   from {
