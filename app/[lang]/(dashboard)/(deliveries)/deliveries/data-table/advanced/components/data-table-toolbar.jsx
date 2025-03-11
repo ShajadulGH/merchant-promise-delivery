@@ -69,7 +69,7 @@ export function DataTableToolbar({ table, printTable, exportToExcel }) {
         <Icon
           onClick={printTable}
           icon="mdi:printer"
-          className="w-5 h-5 text-blue-500"
+          className="w-5 h-5 text-blue-700"
         />
       </Button>
       <Button
@@ -80,7 +80,7 @@ export function DataTableToolbar({ table, printTable, exportToExcel }) {
         <Icon
           onClick={exportToExcel}
           icon="mdi:file-excel"
-          className="w-5 h-5 text-green-500"
+          className="w-5 h-5 text-green-700"
         />
       </Button>
 

@@ -246,14 +246,14 @@ export const columns = [
             className="h-9 w-9 rounded bg-default-100 text-red-500 hover:text-primary-foreground"
           >
             <Link href="/parcel-info">
-              <Icon icon="heroicons:eye" className="w-5 h-5" />
+              <Icon icon="mdi:eye" className="w-5 h-5" />
             </Link>
           </Button>
           <Button
             size="icon"
             className="h-9 w-9 rounded bg-default-100 text-red-500 hover:text-primary-foreground"
           >
-            <Icon icon="heroicons:printer" className="w-5 h-5" />
+            <Icon icon="mdi:printer" className="w-5 h-5" />
           </Button>
         </div>
       );
