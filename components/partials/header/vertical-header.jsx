@@ -60,7 +60,7 @@ const VerticalHeader = ({ handleOpenSearch }) => {
 
   const MainLogo = (
     <Link href="/dashboard" className=" text-primary ">
-      <Image src="/Asset 1RP Logo.png" width="150" height="150" />
+      <Image src="/Asset 1RP Logo.png" width="120" height="120" />
     </Link>
   );
   const SearchButton = (
@@ -90,7 +90,7 @@ const VerticalHeader = ({ handleOpenSearch }) => {
       <div className="flex items-center md:gap-6 gap-3">
         {LogoContent}
         {menuBarContent}
-        {SearchButton}
+        {isDesktop && SearchButton}
       </div>
     </>
   );

@@ -18,9 +18,12 @@ const NavTools = ({ isDesktop }) => {
         <Button className="rounded-[5px]">Add Parcel</Button>
       </Link>
       {isDesktop && <Language />}
-      <div className="ltr:pl-2">
-        <ProfileInfo />
-      </div>
+      {isDesktop && (
+        <div className="ltr:pl-2">
+          <ProfileInfo />
+        </div>
+      )}
+
       {!isDesktop && <MobileMenuHandler />}
     </div>
   );

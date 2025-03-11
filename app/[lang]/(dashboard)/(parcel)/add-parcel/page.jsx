@@ -14,7 +14,7 @@ const FormLayout = () => {
               <div className="flex items-center justify-between">
                 <span>Add Parcel</span>
                 <Link href="/bulk-order">
-                  <Button color="destructive">Bulk Order</Button>
+                  <Button>Bulk Order</Button>
                 </Link>
               </div>
             }

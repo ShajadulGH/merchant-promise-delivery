@@ -20,6 +20,8 @@ export const useSidebar = create(
     (set) => ({
       collapsed: false,
       setCollapsed: (value) => set({ collapsed: value }),
+      mobileMenu: false,
+      setMobileMenu: (value) => set({ mobileMenu: value }),
     }),
     {
       name: "sidebar-store",
