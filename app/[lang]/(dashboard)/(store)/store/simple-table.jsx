@@ -7,60 +7,69 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { users } from "./data";
-import { Button } from "@/components/ui/button";
-
+import { Badge } from "@/components/ui/badge";
 const SimpleTable = () => {
   const columns = [
     {
-      key: "name",
-      label: "name"
+      key: "sl",
+      label: "sl",
     },
     {
-      key: "title",
-      label: "title"
+      key: "shop name",
+      label: "shop name",
     },
     {
-      key: "email",
-      label: "email"
+      key: "shop address",
+      label: "shop address",
     },
     {
-      key: "role",
-      label: "role"
+      key: "contact number",
+      label: "contact number",
     },
     {
       key: "action",
-      label: "action"
+      label: "action",
     },
-  ]
+  ];
   return (
-
     <Table>
       <TableHeader>
         <TableRow>
-          {
-            columns.map(column => (
-              <TableHead key={column.key}>{column.label}</TableHead>
-            ))
-          }
+          {columns.map((column) => (
+            <TableHead key={column.key}>{column.label}</TableHead>
+          ))}
         </TableRow>
       </TableHeader>
       <TableBody>
-        {users.map(item => (
+        {users.map((item) => (
           <TableRow key={item.id}>
-            <TableCell>{item.name}</TableCell>
-            <TableCell>{item.title}</TableCell>
-            <TableCell>{item.email}</TableCell>
-            <TableCell><span className="capitalize font-medium">{item.role}</span></TableCell>
-            <TableCell className="ltr:pr-5 rtl:pl-5">
-              <Button className="p-0 h-auto hover:bg-transparent bg-transparent text-primary hover:text-primary/80  hover:underline">
+            <TableCell>{item.id}</TableCell>
+            <TableCell>{item.shopName}</TableCell>
+            <TableCell>{item.shopAddress}</TableCell>
+            <TableCell>{item.customerNumber}</TableCell>
+            <TableCell className="space-x-2">
+              <Badge variant="outline" className="rounded-[5px]">
                 Edit
-              </Button>
+              </Badge>
+              <Badge
+                variant="outline"
+                className="rounded-[5px]"
+                color="success"
+              >
+                Active
+              </Badge>
+              <Badge
+                variant="outline"
+                className="rounded-[5px]"
+                color="warning"
+              >
+                Default Pickup Store
+              </Badge>
             </TableCell>
           </TableRow>
         ))}
       </TableBody>
     </Table>
-
   );
 };
 
