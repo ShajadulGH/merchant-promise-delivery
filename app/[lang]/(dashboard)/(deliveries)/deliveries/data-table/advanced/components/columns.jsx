@@ -30,7 +30,7 @@ export const columns = [
       };
 
       return (
-        <div className="flex flex-col space-y-1 min-w-[80px]">
+        <div className="flex flex-col space-y-1 min-w-[150px]">
           <div className="text-sm flex items-center gap-2">
             <span>{invoice.id}</span>
             <button
@@ -169,9 +169,9 @@ export const columns = [
       }
 
       return (
-        <div className="flex items-center">
+        <div className="flex items-center min-w-[150px]">
           {status.icon && (
-            <status.icon className="ltr:mr-2 rtl:ml-2 h-4 w-4 text-muted-foreground" />
+            <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
           )}
           <Badge
             className="p-1.5 rounded-md"

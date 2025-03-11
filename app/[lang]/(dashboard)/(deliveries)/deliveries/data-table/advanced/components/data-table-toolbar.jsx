@@ -7,6 +7,7 @@ import { statuses } from "../data/data";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 import { DatePicker } from "antd";
 import "antd/dist/reset.css";
+import { Icon } from "@iconify/react";
 const { RangePicker } = DatePicker;
 
 // Helper function to flatten nested objects into a single string
@@ -22,7 +23,7 @@ const flattenObject = (obj, prefix = "") => {
   }, {});
 };
 
-export function DataTableToolbar({ table }) {
+export function DataTableToolbar({ table, printTable, exportToExcel }) {
   const isFiltered = table.getState().columnFilters.length > 0;
 
   const handleDateChange = (dates, dateStrings) => {
@@ -60,6 +61,28 @@ export function DataTableToolbar({ table }) {
         onChange={handleGlobalFilterChange}
         className="h-8 min-w-[200px] max-w-sm border-red-500 placeholder:text-red-500 font-bold"
       />
+      <Button
+        variant="outline"
+        size="icon"
+        className="h-8 w-8 rounded bg-white text-red-500 hover:text-primary-foreground"
+      >
+        <Icon
+          onClick={printTable}
+          icon="mdi:printer"
+          className="w-5 h-5 text-blue-500"
+        />
+      </Button>
+      <Button
+        variant="outline"
+        size="icon"
+        className="h-8 w-8 rounded bg-white text-red-500 hover:text-primary-foreground"
+      >
+        <Icon
+          onClick={exportToExcel}
+          icon="mdi:file-excel"
+          className="w-5 h-5 text-green-500"
+        />
+      </Button>
 
       <RangePicker
         onChange={handleDateChange}
