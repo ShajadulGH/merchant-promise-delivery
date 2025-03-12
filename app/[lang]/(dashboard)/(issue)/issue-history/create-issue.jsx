@@ -43,11 +43,8 @@ const CreateTask = ({ open, onClose }) => {
         <form className=" h-full flex flex-col justify-between">
           <div className="space-y-4">
             <div>
-              <Label
-                htmlFor="assignedMember"
-                className="mb-1.5 text-default-600"
-              >
-                Assigned To
+              <Label htmlFor="category" className="mb-1.5 text-default-600">
+                Category
               </Label>
               <Select
                 className="react-select"
@@ -57,11 +54,8 @@ const CreateTask = ({ open, onClose }) => {
               />
             </div>
             <div>
-              <Label
-                htmlFor="assignedMember"
-                className="mb-1.5 text-default-600"
-              >
-                Assigned To
+              <Label htmlFor="subCategory" className="mb-1.5 text-default-600">
+                Sub Category
               </Label>
               <Select
                 className="react-select"
