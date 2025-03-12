@@ -169,7 +169,8 @@
 .custom-range-picker {
   height: 32px;
   border-color: #dc2626;
-  color: red;
+  color: #dc2626;
+  font-weight: 600;
 
   &:hover {
     border-color: #dc2626; // Ensure border stays red on hover

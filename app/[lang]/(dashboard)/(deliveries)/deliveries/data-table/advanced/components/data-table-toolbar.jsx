@@ -309,7 +309,7 @@ export function DataTableToolbar({ table, printTable, exportToExcel }) {
       <Button
         variant="outline"
         size="icon"
-        className="h-8 w-8 rounded bg-white text-gray-500"
+        className="h-8 w-8 rounded bg-white "
       >
         <Icon
           onClick={printTable}
@@ -322,7 +322,7 @@ export function DataTableToolbar({ table, printTable, exportToExcel }) {
       <Button
         variant="outline"
         size="icon"
-        className="h-8 w-8 rounded bg-white text-gray-500"
+        className="h-8 w-8 rounded bg-white"
       >
         <Icon
           onClick={exportToExcel}
