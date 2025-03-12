@@ -51,9 +51,9 @@ export const columns = [
               color={
                 (status?.label === "Delivered" && "success") ||
                 (status?.label === "Canceled" && "destructive") ||
-                (status?.label === "Parcial Delivered" && "warning") ||
+                (status?.label === "Partial Delivered" && "warning") ||
                 (status?.label === "Paid" && "success") ||
-                (status?.label === "Parcial Return" && "warning") ||
+                (status?.label === "Partial Return" && "warning") ||
                 (status?.label === "Returned" && "destructive")
               }
             >
@@ -179,7 +179,7 @@ export const columns = [
             color={
               (status.label === "Delivered" && "success") ||
               (status.label === "Canceled" && "destructive") ||
-              (status.label === "Parcial Delivered" && "warning")
+              (status.label === "Partial Delivered" && "warning")
             }
           >
             {status.label}
@@ -212,9 +212,9 @@ export const columns = [
               color={
                 (status?.label === "Delivered" && "success") ||
                 (status?.label === "Canceled" && "destructive") ||
-                (status?.label === "Parcial Delivered" && "warning") ||
+                (status?.label === "Partial Delivered" && "warning") ||
                 (status?.label === "Paid" && "success") ||
-                (status?.label === "Parcial Return" && "warning") ||
+                (status?.label === "Partial Return" && "warning") ||
                 (status?.label === "Returned" && "destructive")
               }
             >

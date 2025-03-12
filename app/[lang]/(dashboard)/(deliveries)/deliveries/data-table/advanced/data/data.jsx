@@ -7,7 +7,7 @@ export const statuses = [
   },
   {
     value: "partial delivered",
-    label: "Parcial Delivered",
+    label: "Partial Delivered",
     icon: HelpCircle,
   },
   {
@@ -22,7 +22,7 @@ export const statuses = [
   },
   {
     value: "partial return",
-    label: "Parcial Return",
+    label: "Partial Return",
     icon: HelpCircle,
   },
   {

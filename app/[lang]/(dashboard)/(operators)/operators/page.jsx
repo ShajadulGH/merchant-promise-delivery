@@ -1,10 +1,10 @@
 "use client";
 
-import Card from "@/components/ui/card-snippet";
 import SimpleTable from "./simple-table";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { BreadcrumbItem, Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { Card } from "@/components/ui/card";
 
 const TailwindUiTable = () => {
   return (
@@ -13,8 +13,8 @@ const TailwindUiTable = () => {
         <BreadcrumbItem>Operators</BreadcrumbItem>
         <BreadcrumbItem>Operators List</BreadcrumbItem>
       </Breadcrumbs>
-      <div className=" space-y-6 mt-5">
-        <Card title="Operators">
+      <div className=" space-y-6 mt-5 mb-5">
+        <Card className="p-5">
           <div className="flex flex-wrap items-center gap-4 mb-1">
             <div className="flex-1">
               <h3 className="text-xl font-medium text-default-700 mb-2">
@@ -27,6 +27,7 @@ const TailwindUiTable = () => {
               </Link>
             </div>
           </div>
+
           <SimpleTable />
         </Card>
       </div>

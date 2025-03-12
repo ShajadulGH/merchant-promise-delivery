@@ -309,7 +309,7 @@ const InvoicePreview = () => {
               </div>
             </CardContent>
           </Card>
-          <div className="mt-8 flex gap-4 justify-end">
+          <div className="mt-8 flex gap-4 justify-end mb-5">
             <Button
               asChild
               variant="outline"
