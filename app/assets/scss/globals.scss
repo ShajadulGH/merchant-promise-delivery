@@ -168,31 +168,32 @@
 // Date range picker
 .custom-range-picker {
   height: 32px;
-  border-color: red;
+  border-color: #dc2626;
   color: red;
 
   &:hover {
-    border-color: red; // Ensure border stays red on hover
+    border-color: #dc2626; // Ensure border stays red on hover
   }
   &:focus {
-    border-color: red;
+    border-color: #dc2626;
   }
   &:focus-within {
-    border-color: red;
+    border-color: #dc2626;
   }
 
   .ant-picker-input input::placeholder {
-    color: red;
+    color: #dc2626;
+    font-weight: 600;
   }
   .ant-picker-suffix {
-    color: red;
+    color: #dc2626;
   }
 
   .ant-picker-separator {
-    color: red;
+    color: #dc2626;
   }
   .ant-picker-active-bar {
-    background-color: red;
+    background-color: #dc2626;
   }
 }
 
