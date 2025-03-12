@@ -76,7 +76,6 @@ const CreateTask = ({ open, onClose }) => {
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Upload Files
               </label>
-
               {/* Hidden File Input */}
               <input
                 id="file-upload"
@@ -85,7 +84,6 @@ const CreateTask = ({ open, onClose }) => {
                 className="hidden"
                 onChange={handleFileChange}
               />
-
               {/* Custom Upload Button */}
               <label
                 htmlFor="file-upload"

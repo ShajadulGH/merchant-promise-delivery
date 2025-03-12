@@ -158,40 +158,6 @@ export const columns = [
     enableHiding: true,
   },
   {
-    accessorKey: "status",
-    cell: ({ row }) => {
-      const status = statuses.find(
-        (status) => status.value === row.getValue("status")
-      );
-
-      if (!status) {
-        return null;
-      }
-
-      return (
-        <div className="flex items-center min-w-[150px]">
-          {status.icon && (
-            <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <Badge
-            className="p-1.5 rounded-md"
-            variant="soft"
-            color={
-              (status.label === "Delivered" && "success") ||
-              (status.label === "Canceled" && "destructive") ||
-              (status.label === "Partial Delivered" && "warning")
-            }
-          >
-            {status.label}
-          </Badge>
-        </div>
-      );
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id));
-    },
-  },
-  {
     accessorKey: "paymentReturnStatus",
     header: "Payment/Return Status",
     cell: ({ row }) => {

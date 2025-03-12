@@ -1,7 +1,11 @@
 import React from "react";
-
+import Table from "./table";
 const Demo = () => {
-  return <div>Demo</div>;
+  return (
+    <div>
+      <Table />
+    </div>
+  );
 };
 
 export default Demo;
