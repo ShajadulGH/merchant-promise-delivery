@@ -7,20 +7,6 @@ import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react";
 import { Eye, EyeOff } from "lucide-react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-
-import windowsImage from "@/public/images/social/windows.png";
-import androidImage from "@/public/images/social/android.png";
-import macImage from "@/public/images/social/mac.png";
-import iphoneImage from "@/public/images/social/iphone.png";
-import Image from "next/image";
 
 const ChangePassword = () => {
   const [currentPasswordType, setCurrentPasswordType] = useState("password");
