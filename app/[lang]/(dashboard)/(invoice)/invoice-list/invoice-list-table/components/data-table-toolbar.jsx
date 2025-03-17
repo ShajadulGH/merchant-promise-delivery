@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DataTableViewOptions } from "./data-table-view-options";
-import { priorities, statuses } from "../data/data";
+import { statuses } from "../data/data";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 import { DatePicker } from "antd";
 import "antd/dist/reset.css"; // Import Ant Design styles
@@ -45,14 +45,6 @@ export function DataTableToolbar({ table }) {
           options={statuses}
         />
       )}
-      {table.getColumn("priority") && (
-        <DataTableFacetedFilter
-          column={table.getColumn("priority")}
-          title="Store"
-          options={priorities}
-        />
-      )}
-
       {isFiltered && (
         <Button
           variant="outline"

@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
@@ -11,6 +9,6 @@
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": [".next/types/**/*.ts", ".contentlayer/generated"],
+  "include": [".contentlayer/generated"],
   "exclude": ["node_modules"]
 }
