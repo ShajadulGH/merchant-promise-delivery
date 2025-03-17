@@ -3,13 +3,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import EcommerceStats from "./components/ecommerce-stats";
 import Topten from "./components/top-ten";
-import DatePickerWithRange from "@/components/date-picker-with-range";
+// import DatePickerWithRange from "@/components/date-picker-with-range";
 const EcommercePageView = ({ trans }) => {
   return (
     <div className="space-y-6">
       <div className="mt-5 flex flex-wrap gap-4 items-center justify-between">
         <div className="text-2xl font-medium text-default-800">Dashboard</div>
-        <DatePickerWithRange />
+        Date
       </div>
 
       <div className="grid grid-cols-12 gap-6">

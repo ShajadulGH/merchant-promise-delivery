@@ -1,9 +1,6 @@
 "use client";
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Icon } from "@iconify/react";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 // Dummy data for issues
@@ -335,9 +332,7 @@ const IssueList = ({ onIssueSelect, selectedIssue }) => {
               <p className="truncate text-md text-black ">{issue.text}</p>
             </div>
             <div className="text-md text-black  whitespace-nowrap">
-              {formatDistanceToNow(new Date(issue.date), {
-                addSuffix: true,
-              })}
+              {issue.date}
             </div>
           </div>
         ))}

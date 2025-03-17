@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 const SingleMenuItem = ({ item, collapsed, setMobileMenu }) => {
   const { badge, href, title } = item;
+  const Icon = item.icon;
   const locationName = usePathname();
   return (
     <Link href={href}>
@@ -24,7 +25,7 @@ const SingleMenuItem = ({ item, collapsed, setMobileMenu }) => {
                 }
               )}
             >
-              <item.icon className="w-6 h-6" />
+              <Icon className="w-6 h-6" />
             </span>
           </div>
         ) : (
@@ -41,7 +42,7 @@ const SingleMenuItem = ({ item, collapsed, setMobileMenu }) => {
             )}
           >
             <span className="flex-grow-0">
-              <item.icon className="w-5 h-5" />
+              <Icon className="w-5 h-5" />
             </span>
             <div className="text-box flex-grow">{title}</div>
             {badge && <Badge className=" rounded">{item.badge}</Badge>}

@@ -72,12 +72,6 @@ const MobileSidebar = ({ collapsed, className }) => {
           }
         )}
       >
-        {sidebarBg !== "none" && (
-          <div
-            className=" absolute left-0 top-0   z-[-1] w-full h-full bg-cover bg-center opacity-[0.07]"
-            style={{ backgroundImage: `url(${sidebarBg})` }}
-          ></div>
-        )}
         <SidebarLogo collapsed={collapsed} />
         <ScrollArea
           className={cn("sidebar-menu  h-[calc(100%-80px)] ", {

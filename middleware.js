@@ -1,33 +1,36 @@
 import { NextResponse } from "next/server";
-import { match } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
 
 let defaultLocale = "en";
 let locales = ["bn", "en", "ar"];
 
-// Get the preferred locale, similar to above or using a library
+// Simple locale matcher function without using Negotiator
 function getLocale(request) {
-  const acceptedLanguage = request.headers.get("accept-language") ?? undefined;
-  let headers = { "accept-language": acceptedLanguage };
-  let languages = new Negotiator({ headers }).languages();
+  const acceptedLanguage = request.headers.get("accept-language") ?? "";
 
-  return match(languages, locales, defaultLocale); // -> 'en-US'
+  // Split accepted languages by comma and trim each language tag
+  const languages = acceptedLanguage
+    .split(",")
+    .map((lang) => lang.split(";")[0].trim());
+
+  // Find the first matching locale from the accepted languages
+  for (const lang of languages) {
+    const baseLang = lang.split("-")[0]; // Extract primary language (e.g., "en" from "en-US")
+    if (locales.includes(baseLang)) {
+      return baseLang;
+    }
+  }
+  return defaultLocale; // Fallback to default
 }
 
 export function middleware(request) {
-  // Check if there is any supported locale in the pathname
   const pathname = request.nextUrl.pathname;
 
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
-
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
     return NextResponse.redirect(
       new URL(`/${locale}/${pathname}`, request.url)
     );
@@ -35,10 +38,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next, assets, api)
-    //"/((?!api|assets|.*\\..*|_next).*)",
-    "/((?!api|assets|docs|.*\\..*|_next).*)",
-    // Optional: only run on root (/) URL
-  ],
+  matcher: ["/((?!api|assets|docs|.*\\..*|_next).*)"],
 };

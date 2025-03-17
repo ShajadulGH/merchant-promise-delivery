@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
+// Define button variants using `cva`
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-0   disabled:opacity-50  whitespace-nowrap disabled:pointer-events-none",
+  "inline-flex items-center justify-center rounded-md text-sm font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-0 disabled:opacity-50 whitespace-nowrap disabled:pointer-events-none",
   {
     variants: {
       color: {
@@ -21,8 +21,8 @@ const buttonVariants = cva(
       },
       variant: {
         outline:
-          "border border-current  bg-transparent hover:text-primary-foreground",
-        soft: " bg-opacity-10  hover:text-primary-foreground",
+          "border border-current bg-transparent hover:text-primary-foreground",
+        soft: "bg-opacity-10 hover:text-primary-foreground",
         ghost: "bg-transparent text-current hover:text-primary-foreground",
       },
       size: {
@@ -69,18 +69,18 @@ const buttonVariants = cva(
         variant: "outline",
         color: "secondary",
         className:
-          "text-muted-foreground dark:bg-transparent hover:bg-default-500  dark:hover:bg-default-500/50 border-default-500",
+          "text-muted-foreground dark:bg-transparent hover:bg-default-500 dark:hover:bg-default-500/50 border-default-500",
       },
       {
         variant: "outline",
         color: "default",
         className:
-          "text-primary  hover:text-primary-foreground hover:border-primary hover:bg-primary",
+          "text-primary hover:text-primary-foreground hover:border-primary hover:bg-primary",
       },
       {
         variant: "outline",
         color: "primary",
-        className: "text-primary  hover:text-primary-foreground",
+        className: "text-primary hover:text-primary-foreground",
       },
       {
         variant: "soft",
@@ -95,7 +95,7 @@ const buttonVariants = cva(
       {
         variant: "soft",
         color: "destructive",
-        className: "text-destructive  hover:text-destructive-foreground",
+        className: "text-destructive hover:text-destructive-foreground",
       },
       {
         variant: "soft",
@@ -106,7 +106,7 @@ const buttonVariants = cva(
         variant: "soft",
         color: "secondary",
         className:
-          "text-muted-foreground dark:bg-opacity-50  hover:bg-default-500/50  dark:hover:bg-opacity-100",
+          "text-muted-foreground dark:bg-opacity-50 hover:bg-default-500/50 dark:hover:bg-opacity-100",
       },
       {
         variant: "soft",
@@ -116,36 +116,35 @@ const buttonVariants = cva(
       {
         variant: "ghost",
         color: "default",
-        className: " text-primary  ",
+        className: "text-primary",
       },
       {
         variant: "ghost",
         color: "secondary",
         className:
-          " text-muted-foreground dark:bg-transparent hover:bg-default-500/50  dark:hover:bg-default-500/50",
+          "text-muted-foreground dark:bg-transparent hover:bg-default-500/50 dark:hover:bg-default-500/50",
       },
       {
         variant: "ghost",
         color: "success",
-        className: " text-success  hover:text-success-foreground ",
+        className: "text-success hover:text-success-foreground",
       },
       {
         variant: "ghost",
         color: "info",
-        className: " text-info hover:text-info-foreground ",
+        className: "text-info hover:text-info-foreground",
       },
       {
         variant: "ghost",
         color: "warning",
-        className: " text-warning hover:text-warning-foreground ",
+        className: "text-warning hover:text-warning-foreground",
       },
       {
         variant: "ghost",
         color: "destructive",
-        className: " text-destructive  hover:text-destructive-foreground ",
+        className: "text-destructive hover:text-destructive-foreground",
       },
     ],
-
     defaultVariants: {
       color: "default",
       size: "default",
@@ -153,9 +152,11 @@ const buttonVariants = cva(
   }
 );
 
+// Button component with `forwardRef` and `asChild` support without `Slot`
 const Button = React.forwardRef(
   ({ className, variant, size, color, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
+    // Instead of `Slot`, use `span` when `asChild` is true, and `button` otherwise
+    const Comp = asChild ? "span" : "button";
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, color, className }))}

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
+  reactStrictMode: true, // Enable React Strict Mode
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

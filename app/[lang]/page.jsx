@@ -17,7 +17,7 @@ const LoginPage = () => {
               src={background}
               alt="image"
               className="absolute top-0 left-0 w-full h-full object-cover "
-              layout="fill"
+              fill
             />
           </div>
           <div className=" min-h-screen basis-full md:basis-1/2 w-full px-4 py-5 flex justify-center items-center">
